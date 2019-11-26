@@ -5,7 +5,12 @@
 '''
 # camel-case
 # snake-case
+
+import module as m
+
 name_file = input('Введите имя файла: ')
-lines = get_lines(name_file)
-points = get_points(lines)
-print(get_max_point(points))
+lines = m.get_lines(name_file, 1)
+print('\n'.join(lines))
+
+# points = m.get_points(lines)
+# print(m.get_max_point(points))
