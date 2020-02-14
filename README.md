@@ -1,5 +1,6 @@
 # py-algorithmization-and-programming
-## Алгоритмизация и программирование на Python
+## Алгоритмизация и программирование
+### на Python
 
 ---
 
