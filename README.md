@@ -3,12 +3,12 @@
 
 ---
 
-[https://github.com/permCoding/py-algorithmization-and-programming/tree/master/part-1](СЕМЕСТР №1)
+[СЕМЕСТР №1](https://github.com/permCoding/py-algorithmization-and-programming/tree/master/part-1)
 
 ---  
 
 _Семестр 2_  
-[https://github.com/permCoding/py-algorithmization-and-programming/tree/master/part-2](СЕМЕСТР №2)
+[СЕМЕСТР №2](https://github.com/permCoding/py-algorithmization-and-programming/tree/master/part-2)
 
 ---  
 
