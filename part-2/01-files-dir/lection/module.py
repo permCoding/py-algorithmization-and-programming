@@ -15,3 +15,10 @@ def bin_to_dec_rec(b):
 		return 0
 	else:
 		return int(b[0])*2**(len(b)-1) + bin_to_dec_rec(b[1:])
+
+def dec_to_bin(d):
+	'''
+	функция перевода из 10-й в 2-ую
+	'''
+	b = '1101'
+	return b
