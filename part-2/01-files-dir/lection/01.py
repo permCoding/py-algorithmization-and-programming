@@ -8,6 +8,8 @@
 '''
 import module
 
-b = input('Введите двоичное число ')
-print(module.bin_to_dec(b))
-print(module.bin_to_dec_rec(b))
+# b = input('Введите двоичное число ')
+# print(module.bin_to_dec(b))
+# print(module.bin_to_dec_rec(b))
+d = int(input('Введите 10-ое число - '))
+print(module.dec_to_bin(d))
