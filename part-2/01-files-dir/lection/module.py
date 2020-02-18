@@ -26,6 +26,19 @@ def dec_to_bin(d):
 		d //= 2
 	return b
 
+def dec_to_bin_rec(d):
+	'''
+	рекурсивная функция перевода из 10-й в 2-ую
+	'''
+	b = ''
+	#
+	#
+	#
+	return b
+
+
+
+
 '''
 	d // 2
 	d % 2
