@@ -1,4 +1,3 @@
-
 def bin_to_dec(b):
 	'''
 	функция перевода из 2-ой в 10-ую
@@ -7,3 +6,12 @@ def bin_to_dec(b):
 	for i in range(len(b)):
 		d += int(b[i])*2**(len(b)-1-i)
 	return d
+
+def bin_to_dec_rec(b):
+	'''
+	рекурсивная функция перевода из 2-ой в 10-ую
+	'''
+	if b == '':
+		return 0
+	else:
+		return int(b[0])*2**(len(b)-1) + bin_to_dec_rec(b[1:])

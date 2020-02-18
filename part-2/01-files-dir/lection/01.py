@@ -10,3 +10,4 @@ import module
 
 b = input('Введите двоичное число ')
 print(module.bin_to_dec(b))
+print(module.bin_to_dec_rec(b))
