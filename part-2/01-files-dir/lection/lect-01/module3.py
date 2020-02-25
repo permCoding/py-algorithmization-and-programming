@@ -5,6 +5,9 @@ class DataWork():
     def __init__(self, d = 0):
         self.num_dec = d
 
+    def __repr__(self):
+        return 'dec = ' + str(self.num_dec) + '; bin = ' + str(self.num_bin)
+
     def bin_to_dec(self, b):
         d = 0
         for i in range(len(b)):
@@ -12,10 +15,12 @@ class DataWork():
         return d
 
     def dec_to_bin(self, d):
-        b = '* '
-        while d > 0:
+        b = ''
+        while d >= 0:
             b += str(d % 2)
             d //= 2
+            if d == 0:
+                break
         return b
 
     def dec_to_bin_(self):        

@@ -23,3 +23,6 @@ for obj in list_obj:
 
 for i in range(len(list_obj)):
     print(i+1, obj.num_bin)
+
+for obj in list_obj:
+    print(obj)
