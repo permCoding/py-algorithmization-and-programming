@@ -5,6 +5,9 @@ class WorkData():
     def __init__(self, dec = 0):
         self.num_dec = dec
 
+    def __repr__(self):
+        return 'dec = ' + str(self.num_dec)
+
     def bin_to_dec(self, b):
         i = len(b) - 1
         d = 0
