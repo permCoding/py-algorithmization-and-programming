@@ -12,7 +12,7 @@ class DataWork():
         return d
 
     def dec_to_bin(self, d):
-        b = ''
+        b = '* '
         while d > 0:
             b += str(d % 2)
             d //= 2
