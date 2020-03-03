@@ -24,8 +24,8 @@ def get_all_files(dir, check_ext):
         if os.path.isfile(new_path):
             name, ext = os.path.splitext(item)
             if ext == check_ext:
-                list_all_files.append(name)
-        if os.path.isdir(item):
+                list_all_files.append(new_path)
+        if os.path.isdir(new_path):
             get_all_files(new_path, check_ext)
 
 list_all_files = []
