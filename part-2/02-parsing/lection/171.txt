@@ -1,0 +1,2019 @@
+﻿2017   ПРОГРАММИРОВАНИЕ   ПИб-1курс
+ЛЕК=14шт   Л/Р=11шт   СРС=72ч
+
+ТУТ СМОТРИМ СВОЙ РЕЙТИНГ И ОЦЕНКИ:   goo.gl/vpJBmV
+БИБЛИОТЕКИ, ПРОГРАММЫ И ПРИМЕРЫ К НИМ:   goo.gl/rjMXHn
+файл HELPME - текущие подсказочки - на ЛабРаб:   goo.gl/TvmKZq
+Pascal интенсив - кратко обо всём:   yadi.sk/i/2xNSPzvg3HipsB
+
+  языки   скачать тут:
+Delphi	https://yadi.sk/d/HSLWlbdm3ErqUk
+Pascal	http://pascalabc.net/
+Python	https://www.python.org/
+
+   требования по Дисциплине:
+посещать лекции, так как без них не понять что и как делать
+до лабораторки: дома тренироваться самому по примерам с лекции
+на лабораторке: приходить на лабораторки, выполнять задания
+поиск задания к лабораторке так:  Ctrl+F   ЛР_01  ЛР_02  ЛР_03  и т.д.
+
+====================================================
+итоговая оценка за дисциплину:
+- складывается по итогам работы на лабораторках 
+   ЭКЗАМЕН
+в форме собеседования с решением практических заданий (только для тех, кого не удовлетворила оценка выше)
+--- ТЕМЫ, выносимые на ЭКЗАМЕН - работа с:
+  - текстовыми файлами - прочитать, записать, добавить - может одна строка или несколько
+  - динамическими массивами - сгенерировать массив случайных чисел, добавить элемент, найти мин/макс, выбрать из массива по условию
+  - строками - парсинг - пример задания: пользователь вводит Комягина Дарья Вячеславовна - программа возвращает Комягина Д.В.
+  - подпрограммами - функции и процедуры, какая разница между ними, аргументы, примеры задания: в функцию передать строку, а вернуть количество гласных букв, передать целое число, а вернуть количество четных цифр в нём
+====================================================
+
+
+
+--------------------------------------------------------------------------
+ЛАБОРАТОРКИ
+ЛР_01
+   Техническое задание:
+ Во входном файле (Input.txt) находится список фраз (построчно).
+ Нужно вывести в выходной файл (Output.txt) только те из них, что являются палиндромами.
+
+ - вспоминаем лекцию №4
+ - для решения нужны примеры с лекций 1-4
+ - качаем папку со всеми вспомогательными библиотеками и примерами (ссылка вверху)
+ - шаг 1: сначала доделать перегружаемый метод start, так чтобы можно было задавать цвет шрифта и фона
+ - шаг 2: добиться работы с одной строкой, введенной с клавиатуры
+ - шаг 3: добиться правильности работы при вводе в разных регистрах и с запрещенными символами
+ - шаг 4: добиться работы с одной строкой, введенной из файла
+ - шаг 5: добиться работы со множеством строк, введенных из файла
+ - шаг 6: добиться вывода результатов в выходной файл
+ - шаг 7: выполнить индивидуальное задание по форматированию выходного файла
+		  (например, проставить нумерацию строк)
+ 
+ЛР_02
+   Техническое задание:
+   - так как у нас был заметный перерыв в занятиях и есть мнение,
+   что у многих затруднения в решении элементарных задач
+   с использованием структурных операторов ветвления и цикла,
+   то в качестве задания используем методичку с упрощенным подходом
+   (по принципу "смотрим-повторяем-дополняем"):
+   - на сайте раздел Программирование / Лабораторки / Лаб.работа №2
+   - прямая ссылка:  http://itvop.vov.ru/algopro/labrab/pascal02.pdf
+
+ЛР_03
+   Техническое задание:
+* простое шифрование / три отдельные программы:
+1) ГЕНЕРАЦИЯ ФАЙЛА
+ - сгенерировать текстовый файл (code.txt) из 10 строчек по 255 символов с кодами от 32 до 255 (случайным образом функцией Random)
+ - для реализации задачи создать функцию, которая возвращает строку с указанными требованиями
+ - функцию разместить в модуле Utils
+2) ШИФРОВАНИЕ ТЕКСТА
+ - открыть файл code.txt и записать в него кодируемый текст (например, такие поля: Фамилия email login password)
+ - принцип шифрования такой:
+ ___ в первой строке файла на определенной позиции (позицию знает только составитель программы) заносится цифра (заменяется тот символ, что ранее там был), например, цифра 4 - это ШАГ ШИФРОВАНИЯ - означает, что нужно брать из строк файла code.txt только каждый 4-й символ, все остальные ничего не значат
+ ___ в последующих строках (например, в каждую отдельную строку заносится содержимое только одного из шифруемых полей) заносятся шифруемые символы с ШАГом, взятым из первой строки, остальные символы не заменяются
+ ___ как программа обозначает конец ввода ПОЛЯ в текущей строке: устанавливается после последнего значащего символа ПОЛЯ какой-то определенный символ, который больше нигде не используется (например, символ с кодом 31)
+ - для реализации задачи создать процедуру, которая исходную строку преобразует в строку с зашифрованными в ней символами
+ - процедуру разместить в модуле Utils
+3) прочитать закодированный текст и сохранить в нормальной для человека форме в текстовом файле output.txt, например, так:
+Фамилия - Иванов
+email - code@gmail.com
+login - ivanov
+password - ivaNOV666
+ - для реализации задачи создать функцию, которая из исходной строки дешифрует текст
+ - функцию разместить в модуле Utils
+4) дополнительное индивидуальное задание (по указанию преподавателя)
+
+пример строки содержащей поле login со значением ivanov и шагом 4:
+rс-i0тТv¦F¦a¦9яnz Ho-ыSv-dDcieIUNVinf934jfo ejwsijn82шгцкут...ну и так далее до 255-го символа
+
+
+ЛР_04
+   Техническое задание:
+Строим диаграмму по входным данным с сайта КоноПоиск (ссылка: https://www.kinopoisk.ru/top/y/2016/)
+Оттуда с помощью копирования со страницы браузера взята информация и сохранена в файл kinopoisk_2016.txt 
+Берите файл с гугл-диска из папки tasks
+Начало файла выглядит так:
+1.
+Зверополис (2016)
+Zootopia 
+8.382 (170 618) 
+
+
+
+
+2.
+Ла-Ла Ленд (2016)
+La La Land 
+8.344 (76 829) 
+
+
+
+
+3.
+
+Нужно выбрать названия фильмов (без года) и кол-во голосовавших за фильм (без их рейтинга)
+Данные разместить в динамическом массиве структур (два поля: название/строковое и кол-во голосов/целое)
+На основе данных построить диаграмму с горизонтальным расположением прямоугольников
+Названия фильмов расположить внутри соответсвующих прямоугольников
+Можно делать в PascalABC.NET или в Delphi
+
+
+ЛР_05
+   Техническое задание:
+   Лабораторная работа посвящена массивам и парсингу строк.
+   Всего 8 заданий с возрастающей сложностью.
+   Можно решить не все. Максимальная оценка 5, каждое нерешенное задание минус полбалла.
+   Сами задания и вспомогательные файлы смотрите на:
+	- Яндекс-диске в pdf-файле https://yadi.sk/i/90a5_ydT3JK4yW
+	- Гугль-диске (в папке Parsing) - cсылка в начале этого файла - тут: БИБЛИОТЕКИ, ПРОГРАММЫ И ПРИМЕРЫ К НИМ.
+	- или прямо тут, вот они:
+	
+	ЛР_05	Базовая тема: Парсинг строк.
+			Вспомогательная: массивы (включая двумерные).
+	ЗАДАНИЯ:
+_____________________________________________
+#01
+Вывести на экран сумму целых чисел из файла 01.txt
+Числа в файле находятся "в строку" - в одной строке два числа через пробел, например:
+20 30
+
+_____________________________________________
+#02
+Вывести на экран сумму целых чисел из файла 02.txt:
+20
+30
+16
+34
+Числа в файле находятся "в столбик" - в одной строке одно число.
+Количество чисел заранее известно и равно 4. Используйте цикл for.
+
+_____________________________________________
+#03
+Вывести на экран разницу между максимальным и минимальным числами из файла 03.txt. Числа в файле вещественные (с запятой) и находятся "в столбик" - в одной строке одно число.
+
+Сначала сгенерируйте сам входной файл с помощью программы для генерации файла 03.txt:
+uses Crt;
+var output: Text;
+    s: string;
+    i: integer;
+begin
+  Randomize;
+  AssignFile(output, '03.txt');
+  Rewrite(output);
+  for i:=1 to 30 do
+  begin
+    s:=FloatToStr(100*Random()); // из числа в строку
+    // а обратно:
+    // var r: real;
+    // r:=StrToFloat(s); // из строки в число с запятой
+    WriteLn(output, s);
+  end;
+  CloseFile(output);
+end.
+
+Для вашей программы количество чисел в файле заранее неизвестно, поэтому в коде используйте цикл while.
+
+_____________________________________________
+#04
+Вывести на экран среднее чисел из файла 04.txt.
+Числа в файле находятся "в строку" - в одной строке все числа через пробел, например:
+20 30 11 9 7 16 44
+
+Сначала сгенерируйте сам входной файл с помощью программы для генерации файла 04.txt:
+uses Crt;
+var output: Text;
+    s: string;
+    i: integer;
+begin
+  Randomize;
+  AssignFile(output, '04.txt');
+  Rewrite(output);
+  for i:=1 to 80 do
+  begin
+    s:=IntToStr(Random(100));
+    Write(output, s, ' ');
+  end;
+  CloseFile(output);
+end.
+
+Для вашей программы количество чисел в строке заранее неизвестно, поэтому нужно создать специальную функцию для парсинга строки - StrToArr, которая разбирает строку на массив чисел.
+
+_____________________________________________
+#05
+Транспонировать матрицу - отразить её содержимое относительно главной диагонали.
+Входной файл, например, 05.txt:
+11 21 31 41
+12 22 32 42
+13 23 33 43
+14 24 34 44
+- считать в двумерный массив arr[,], уже в массиве отразить и затем вывести в выходной файл 05_out.txt.
+11 12 13 14
+21 22 23 24
+31 32 33 34
+41 42 43 44
+
+_____________________________________________
+#06
+Сделать файл с таблицей умножения (квадратной) размерностью как укажеть пользователь. При запуске программы возникает вопрос: "Какой размерности хотите таблицу умножения?". Если пользователь ответит числом от 1 до 10, то ответ выводится и на экран и в файл в таком формате, например для 3:
+1 2 3
+2 4 6
+3 6 9
+Следует предусмотреть, что двузначные и трехзначные числа занимают больше позиций и произвести форматированный вывод, чтобы таблица смотрелась аккуратно.
+Если пользователь введет число меньше 1 или больше 10, то сказать ему чтобы он передумал и ввел число из разрешенного диапазона.
+
+_____________________________________________
+#07
+Нужно распарсить строки и преобразовать файл names.txt.
+
+Вот такой входной файл names.txt:
+Комягина Дарья Вячеславовна
+Кузьмин Максим Александрович
+Кулешова Анастасия Александровна
+Лопаева Марина Николаевна
+Мокроусова Ольга Анатольевна
+Продан Антон Сергеевич
+Салимов Ранис Харисович
+Щербинина Юлия Александровна
+Скороходова Нина Анатольевна
+
+Вот такой должен быть файл на выходе - names_out.txt:
+1 Комягина Д.В.
+2 Кузьмин М.А.
+3 Кулешова А.А.
+4 Лопаева М.Н.
+5 Мокроусова О.А.
+6 Продан А.С.
+7 Салимов Р.Х.
+8 Щербинина Ю.А.
+9 Скороходова Н.А.
+
+_____________________________________________
+#08
+"Улитка".
+Объявить двумерный массив (матрицу) размерностью NxN (величина задана в разделе констант). Заполнить массив последовательными индексами начиная от 1 и заканчивая NxN (N от 1 до 9) способом – «по улитке» и вывести его на экран и в файл 08_out.txt, например при N=5:
+01 02 03 04 05
+16 17 18 19 06
+15 24 25 20 07
+14 23 22 21 08
+13 12 11 10 09
+Обратите внимание, что нужно сделать именно так: каждое число занимает два разряда, то есть числа меньшие 10 дополняются нулём слева.
+   
+   
+ЛР_06
+   Техническое задание:
+	лабраб №7 20.05.17
+
+#01 во входном файле 01.txt целое число (создайте сами) - вывести на экран ответ: ПРОСТОЕ или СЛОЖНОЕ
+P.S. Простое число делится нацело только на себя и на единицу.
+
+#02 во входном файле 02.txt "в столбик" список целых чисел (в каждой строке одно число, напишите сами), количество чисел от 1 до 20, нужно вывести на экран "в столбик" ответы в формате, например:
+        12 - сложное
+        11 - простое
+        61 - простое
+		349 - простое
+
+#03 во входном файле 03.txt две строки, в каждой координаты одной точки (X и Y), написанные через пробел, то есть всего даны две точки, например:
+        10 2
+        18 12
+    нужно найти расстояние между точками
+
+#04 во входном файле 04.txt даны координаты (в диапазоне от 1 до 8 и вместо буквенного обозначения используются цифры) двух шахматных фигур - коня и пешки в таком формате:
+        2 3
+        5 5
+    вывести на экран ответ - конь бьет пешку или нет
+
+#05 во входном файле 05.txt стихотворение:
+	Александр Блок
+ Ночь, улица, фонарь, аптека,
+ Бессмысленный и тусклый свет.
+ Живи еще хоть четверть века —
+ Все будет так. Исхода нет.
+ Умрешь — начнешь опять сначала
+ И повторится все, как встарь:
+ Ночь, ледяная рябь канала,
+ Аптека, улица, фонарь.
+	1912
+    нужно вывести на экран сколько в нем гласных и сколько согласных букв
+
+#06 входной файл из предыдущего задания, нужно подсчитать среднюю длину слова
+
+
+
+   
+   
+   
+   
+   
+   
+   
+   ЛЕКЦИИ
+
+--------------------------------------------------------------------------
+лекция 01 Работа с консолью
+  вопросы:
+языки и среды
+консоль
+типы данных
+строка из символов
+чтение текстовых файлов
+обработка данных
+
+ модуль Crt32
+https://yadi.sk/i/mvk1ziLa3Erq4Y
+ рейтинг языков программирования
+http://www.tiobe.com/tiobe-index/
+
+лекция 02 Текстовые файлы
+вопросы: 
+  кодировка в консоли
+  форматированный вывод
+  работа с файлом
+  строки
+  динамические массивы
+
+
+лекция 03 Динамические структуры
+  вопросы:
+	массивы
+	списки
+
+	
+лекция 04 Подпрограммы и модули
+вопросы:
+  процедуры
+  функции
+  передача параметра по значению и по ссылке	
+  __________
+
+
+лекция 05 Графика	(начало)
+вопросы: 
+  Модули работы с графикой
+	Приложение {$APPTYPE GUI}
+	Оси координат
+  Структура Type  
+	
+лекция 06 Графика	(окончание) 
+вопросы: 
+  Рисуем диаграмму
+  работа с цветом и бинарные операции shl, or и т.п.
+
+лекция 07 Графики функций
+
+лекция 08 Анализ графиков функций (метод бисекции)
+	найти точку пересечения с осью абсцисс
+	найти экстремум функции
+
+лекция 09 Проблемы поиска и сортировки
+  измерение времени
+  измерение сложности
+
+лекция 10 Алгоритмы сортировки
+	1) встроенная сортировка
+	2) сортировка обменом
+	3) сортировка выбором
+	4) сортировка вставкой  
+  
+ 
+
+
+ ___________
+	
+	
+	
+
+
+примеры программ Delphi
+
+
++++++++++++++++++++++++++++++++++1
+программы с лекции № 1
+
+=====
+program lek_01;
+{$APPTYPE CONSOLE}
+uses SysUtils, crt32;
+var input: Text;
+    s: string;
+begin
+  AssignFile(input, 'input.txt');
+  Reset(input);
+  while not Eof(input) do
+  begin
+    Readln(input, s);
+    writeln(s);
+  end;
+  CloseFile(input);
+  ReadKey;
+end.
+
+program lek_02;
+{$APPTYPE CONSOLE}
+uses
+  //SysUtils,
+  Crt32, Windows;
+var s: string; i: Integer; Key: Char;
+begin
+  SetConsoleOutputCP(1251);
+  SetConsoleCP(1251);
+  TextBackground(1); ClrScr;
+  TextColor(14);
+  Readln(s);
+  Writeln(s);
+  for i:=Length(s) downto 1  do
+    Write(s[i]);
+  repeat until KeyPressed;
+{  repeat
+    Key:=ReadKey;
+  until Key=#27;}
+end.
+
+program P_curs;
+{$APPTYPE CONSOLE}
+uses SysUtils, Crt32, Windows, Utils;
+const pause = 50; c = '*';
+
+var fon, txt, posx, posy, dx, dy, numkey: integer;
+begin
+  fon := 1; txt := 14;
+  posx := 40; posy := 12; dx := 0; dy := 0;
+  TextBackGround(fon); TextColor(txt); clrscr;
+  WriteChrXY(posx, posy, c);
+
+  repeat
+    Delay(pause); numkey := GetKey();
+    if numkey in [37, 38, 39, 40] then
+    begin
+      case numkey of
+        37: dx:=-1;
+        38: dy:=-1;
+        39: dx:=+1;
+        40: dy:=+1;
+      end;
+
+      TextColor(fon);
+      WriteChrXY(posx, posy, '*');
+      inc(posx,dx); inc(posy,dy);
+      TextColor(txt);
+      WriteChrXY(posx, posy, '*');
+
+      dx:=0; dy:=0;
+    end;
+  until (numkey=27);
+end.
+
+unit Utils;
+
+Interface
+  function GetKey(): Integer;
+
+Implementation
+uses Windows, SysUtils;
+function GetKey(): Integer;
+const count = 16;
+  arr: array [1..count] of Integer =
+  (8,9,13,27,32,37,38,39,40,46,112,113,114,115,35,36);
+var i: Integer;
+begin
+  result:=0;
+  for i:=1 to count do
+    if (GetKeyState(arr[i]) and 128 > 0)
+      then begin result:=arr[i]; Break; end;
+{  if (GetKeyState(VK_LEFT) and 128 = 128) then result:=37;
+  if (GetKeyState(VK_RIGHT) and 128 = 128) then result:=39;
+  if (GetKeyState(VK_UP) and 128 = 128) then result:=38;
+  if (GetKeyState(VK_DOWN) and 128 = 128) then result:=40;}
+end;
+
+end.
+
+
+program P_txt;
+{$APPTYPE CONSOLE}
+uses
+  SysUtils, Crt32, Windows;
+var
+  s: string;
+  x, sum, min: Real;
+  i, count, psn: Integer;
+  arr: array of Real;
+begin
+  SetConsoleOutputCP(1251); SetConsoleCP(1251);
+  
+  AssignFile(Input, 'Input.txt');
+  Reset(Input);
+  sum := 0; count := 0; min := 0;
+
+  while not Eof(Input) do
+  begin
+    count := count + 1;
+    Readln(Input, s); Writeln(s);
+    psn := Pos(' ', s);
+    s := Copy(s, psn+1, Length(s)-psn);
+
+    psn := Pos('.', s);
+    if psn>0
+      then s[psn]:=',';
+    x := StrToFloat(s);
+    Writeln(count:4, x: 10: 3);
+    sum := sum + x;
+    SetLength(arr, count);
+    arr[count-1] := x;
+  end; 
+
+  min := arr[0];
+  for i:=1 to High(arr) do
+    if arr[i] < min
+      then min := arr[i];
+
+  Writeln('--------');
+  Writeln('Sum = ', sum: 5: 3);
+  Writeln('Avg = ', sum / count : 5: 3);
+  Writeln('Min = ', min: 5: 3);
+
+  Close(Input);
+  
+  repeat until ord(ReadKey) = 27;
+end.
+
+
++++++++++++++++++++++++++++++++++2
+программы с лекции № 2
+
+  сначала входной файл Group_PIb_11.db:
+Беляков 4,34
+Сидоров 5,00
+Петров 2
+Никулин 5
+Сванидзе 4,2
+
+program P_File; // pascal ABC
+{$APPTYPE CONSOLE}
+uses Crt;
+var fil_txt: Text; s: string; c: char;
+begin
+  AssignFile(fil_txt, 'Group_PIb_11.db'); Reset(fil_txt);
+  Readln(fil_txt, s);
+  Writeln(s);
+  CloseFile(fil_txt);
+  // chr - символ по номеру
+  // ord - номер символа в Т С
+  
+  repeat 
+    c:=readkey;
+    writeln(c, ' - ', ord(c));
+  until ord(c)=27;
+  //repeat until KeyPressed;
+end.
+
+program P_File_02; // Delphi
+{$APPTYPE CONSOLE}
+uses SysUtils, Crt32, Windows;
+var fil_inp, fil_out: Text; s: string;
+begin
+  SetConsoleCP(1251);
+  SetConsoleOutputCP(1251);
+
+  AssignFile(fil_inp, 'Group_PIb_11.db'); Reset(fil_inp);
+  AssignFile(fil_out, '4.txt'); Rewrite(fil_out);
+  while not Eof(fil_inp) do
+  begin
+    Readln(fil_inp, s);
+    Writeln(fil_out, s);
+  end;
+  CloseFile(fil_inp); CloseFile(fil_out);
+
+  write('Нажмите клавишу ESCAPE для выхода из программы ...');
+  repeat until ord(ReadKey) = 27;
+end.
+
+program P_File_03;
+{$APPTYPE CONSOLE}
+uses SysUtils, Crt32, Windows;
+var fil_inp, fil_out: Text; s: string; n, i: byte;
+begin
+  SetConsoleCP(1251);
+  SetConsoleOutputCP(1251);
+
+  AssignFile(fil_inp, 'Group_PIb_11.db'); Reset(fil_inp);
+  AssignFile(fil_out, '4.txt'); Rewrite(fil_out);
+  while not Eof(fil_inp) do
+  begin
+    Readln(fil_inp, s);
+    n := Pos(' ', s);
+    for i:=1 to n-1 do
+      write( s[i] );
+    Writeln;
+    Writeln(fil_out, s);
+  end;
+  CloseFile(fil_inp); CloseFile(fil_out);
+
+  write('Нажмите клавишу ESCAPE для выхода из программы ...');
+  repeat until ord(ReadKey) = 27;
+end.
+
+program P_File_04;
+{$APPTYPE CONSOLE}
+uses SysUtils, Crt32, Windows;
+var fil_inp, fil_out: Text; s: string; n, i: byte;
+begin
+  SetConsoleCP(1251);
+  SetConsoleOutputCP(1251);
+
+  AssignFile(fil_inp, 'Group_PIb_11.db'); Reset(fil_inp);
+  AssignFile(fil_out, '4.txt'); Rewrite(fil_out);
+  while not Eof(fil_inp) do
+  begin
+    Readln(fil_inp, s);
+    Writeln(fil_out, Copy(s, 1, Pos(' ', s) - 1 ) );
+  end;
+  CloseFile(fil_inp); CloseFile(fil_out);
+
+  write('Нажмите клавишу ESCAPE для выхода из программы ...');
+  repeat until ord(ReadKey) = 27;
+end.
+
+program P_File_05;
+{$APPTYPE CONSOLE}
+uses SysUtils, Crt32, Windows{, Utils};
+const min = 4;
+var fil_inp, fil_out: Text; s, s1, s2: string;
+    ball: Real; n, i: byte;
+begin
+  SetConsoleCP(1251);
+  SetConsoleOutputCP(1251);
+
+  AssignFile(fil_inp, 'Group_PIb_11.db'); Reset(fil_inp);
+  AssignFile(fil_out, '4.txt'); Rewrite(fil_out);
+  while not Eof(fil_inp) do
+  begin
+    Readln(fil_inp, s);
+    n := Pos(' ', s);
+    s1 := Copy(s, 1, n - 1 );
+    s2 := Copy(s, n+1, Length(s)-n );
+    ball := StrToFloat(s2);
+    if ball>=min then Writeln(fil_out, s1 );
+  end;
+  CloseFile(fil_inp); CloseFile(fil_out);
+
+  write('Нажмите клавишу ESCAPE для выхода из программы ...');
+  repeat until ord(ReadKey) = 27;
+end.
+
+
+
++++++++++++++++++++++++++++++++++3
+программы с лекции № 3
+	используем структуры данных: массивы и списки
+
+пример входного файла:
+Беляков 4.5
+Каримов 4,8
+Шилова 3,4
+Смурнов 4,0
+Киприн 2,9
+Мудров 3.9
+Пупкин 3,1
+Сидоров 3.3
+Хлипко 3,5
+1) найти средний балл в группе
+2) отсортировать по фамилии
+3) отсортировать по оценке
+
+// справочная информация, команды работы со списком:
+var StrList: TStringList;
+begin
+  StrList:=TStringList.Create;
+  StrList.Sorted:=True; // True - сортировать, False - не сортировать
+  StrList.Duplicates:=dupIgnore; // dupAccept - сохранять дубликаты (значение по умолчанию), dupIgnore - игнорировать, dupError - вызвать сообщение об ошибке
+  StrList.Add('Новая строка'); //Добавление в конец списка (или в порядке сортировки). Возвращается индекс строки
+  StrList.Insert(Index, 'Новая строка'); // Строка добавляется на позицию с номером Index. Если список отсортирован, то возникает исключительная ситуация.
+  StrList.Delete(Index);   // Удаление строки с номером Index;
+  N:=StrList.Count; // Количество строк в списке:
+  Str:=StrList[Index]; // Доступ к строке с номером Index
+  Last:=StrList.Count-1; // Index отсчитывается от 0, поэтому номер последней строки
+  StrList.Clear; // Очищаем список строк:
+  StrList.Find(S, Index); // Если список отсортирован, есть метод для поиска:
+		// В случае удачного поиска возвращает True, и индекс строки S в переменной Index
+		//Если список не отсортирован, то тоже есть функция поиска:
+  I:=StrList.IndexOf(Text); // Возвращает индекс строки с заданным текстом Text, или -1, если поиск неудачен
+  StrList.Free; // В конце работы со списком его необходимо удалить из памяти
+end;
+
+
+файл Input.txt
+Сидоров 3.5
+Никулин 4,8
+Сванидзе 3.2
+Беляков 4.5
+Мудров 5
+Кикабидзе 3.85
+
+program P_01; // читаем из файла в статический массив и выводим на экран
+{$APPTYPE CONSOLE}
+uses SysUtils, Crt32, Windows;
+var finp, fout: Text;
+    m: array[1..30] of string;
+    i: Byte; s: string;
+begin
+  SetConsoleCP(1251); SetConsoleOutputCP(1251);
+  AssignFile(finp, 'Input.txt'); Reset(finp);
+  i:=1;
+  while not Eof(finp) do
+  begin
+    Readln(finp, s);
+    m[i] := s;
+    //i:=i+1;
+    Inc(i, 2);
+  end;
+  CloseFile(finp);
+
+  for i:=1 to 20 do
+    Writeln(i, ' - ', m[i]);
+
+  ReadKey;  
+end.
+
+program P_02; // читаем из файла в динамический массив и выводим на экран
+{$APPTYPE CONSOLE}
+uses SysUtils, Crt32, Windows;
+var finp, fout: Text;
+    m: array of string;
+    i, count: Byte; s: string;
+begin
+  SetConsoleCP(1251); SetConsoleOutputCP(1251);
+  AssignFile(finp, 'Input.txt'); Reset(finp);
+  count:=0;
+  while not Eof(finp) do
+  begin
+    Inc(count);
+    Readln(finp, s);
+  end;
+
+  SetLength(m, count);
+  Reset(finp);
+  for i:=0 to count-1 do
+    Readln(finp, m[i]);
+  CloseFile(finp);
+
+  for i:=count-1 downto 0 do
+    Writeln(i, ' - ', m[i]);
+
+  ReadKey;
+end.
+
+program P_03; // читаем из файла в список и находим средний балл
+{$APPTYPE CONSOLE}
+uses SysUtils, Crt32, Windows, Classes;
+var finp, fout: Text;
+    m: TStringList;
+    i, count, n: Byte; s,s1,s2: string;
+    sum, avg: Real;
+begin
+  SetConsoleCP(1251); SetConsoleOutputCP(1251);
+  AssignFile(finp, 'Input.txt'); Reset(finp);
+  m := TStringList.Create();
+  while not Eof(finp) do
+  begin
+    Readln(finp, s);
+    m.Add(s);
+  end;
+  CloseFile(finp);
+
+  for i:=0 to m.Count-1 do
+  begin
+    s := m[i];
+    n := Pos(' ', s);
+    s1 := '';
+    s2 := Copy(s, n+1, Length(s)-n);
+    n := Pos('.', s2);
+    if n>0
+      then s2[n] := ',';
+    sum := sum + StrToFloat(s2);
+  end;
+  avg:=sum/m.Count;
+  writeln('avg = ', avg: 5: 2);
+  ReadKey;
+end.
+
+program P_04; // читаем из файла в список, находим средний балл, выводим в файл по условию
+{$APPTYPE CONSOLE}
+uses SysUtils, Crt32, Windows, Classes;
+var finp, fout: Text;
+    m: TStringList;
+    i, count, n: Byte; s,s1,s2: string;
+    name: array of string;
+    ball: array of Real;
+    sum, avg: Real;
+begin
+  SetConsoleCP(1251); SetConsoleOutputCP(1251);
+  AssignFile(finp, 'Input.txt'); Reset(finp);
+  m := TStringList.Create();
+  while not Eof(finp) do
+  begin
+    Readln(finp, s);
+    m.Add(s);
+  end;
+  CloseFile(finp);
+  SetLength(name, m.Count);
+  SetLength(ball, m.Count);
+
+  for i:=0 to m.Count-1 do
+  begin
+    s := m[i];
+    n := Pos(' ', s);
+    name[i] := Copy(s, 1, n-1 );
+    s2 := Copy(s, n+1, Length(s)-n);
+    n := Pos('.', s2);
+    if n>0
+      then s2[n] := ',';
+    ball[i]:=StrToFloat(s2);
+    sum := sum + ball[i];
+  end;
+  avg:=sum/m.Count;
+  writeln('avg = ', avg: 5: 2);
+
+  AssignFile(fout, 'Output.txt'); Rewrite(fout);
+  for i:=0 to m.Count-1 do
+    if ball[i]<avg
+      then Writeln(fout, name[i]);
+  CloseFile(fout);
+
+  ReadKey;
+end.
+
+program P_05; // читаем из файла в список, сортируем и выводим в файл
+{$APPTYPE CONSOLE}
+uses SysUtils, Crt32, Windows, Classes;
+var finp, fout: Text;
+    m, name: TStringList;
+    i, count, n: Byte; s,s1: string;
+begin
+  SetConsoleCP(1251); SetConsoleOutputCP(1251);
+  AssignFile(finp, 'Input.txt'); Reset(finp);
+  m := TStringList.Create();
+  name := TStringList.Create();
+  while not Eof(finp) do
+  begin
+    Readln(finp, s);
+    m.Add(s);
+    n := Pos(' ', s);
+    name.Add( Copy(s, 1, n-1 ) );
+  end;
+  CloseFile(finp);
+
+  name.Sort;
+
+  AssignFile(fout, 'Output.txt'); Rewrite(fout);
+  for i:=name.Count-1 downto 0 do
+    Writeln(fout, name[i]);
+  CloseFile(fout);
+
+  ReadKey;
+end.
+
+
+
+ещё несколько примеров
+program P_01; // наполняем динамический массив случайными числами
+{$APPTYPE CONSOLE}
+uses SysUtils, Crt32, Windows;
+var m: array of Integer;
+    count, i: Integer;
+begin
+  Readln(count);
+  SetLength(m, count);
+  i:=0;
+  Randomize;
+  while i<count do
+  begin
+    m[i]:=Random(10);
+    Inc(i);
+  end;
+
+  for i:=0 to count-1 do
+    write(m[i],Char(9));
+
+  repeat until ord(ReadKey)=27;
+end.
+
+program P_02; // выбираем Фамилии и сортируем
+{$APPTYPE CONSOLE}
+uses SysUtils, Crt32, Windows, Classes;
+var m: TStringList; s: string;
+    count, i, n: Integer;
+    fil_inp, fil_out: Text;
+begin
+  SetConsoleCP(1251);
+  SetConsoleOutputCP(1251);
+
+  AssignFile(fil_inp, 'Input.txt'); Reset(fil_inp);
+  m := TStringList.Create();
+  while not Eof(fil_inp) do
+  begin
+    Readln(fil_inp, s);
+    m.Add(s);
+  end;
+  CloseFile(fil_inp);
+
+  for i:=0 to m.Count-1 do
+  begin
+    n := Pos(' ', m[i]);
+    m[i] := Copy(m[i], 1, n - 1 );
+  end;
+  m.Sort;
+
+  AssignFile(fil_out, 'Output.txt'); Rewrite(fil_out);
+  for i:=0 to m.Count-1 do
+    Writeln(fil_out, m[i]);
+  CloseFile(fil_out);
+
+  repeat until ord(ReadKey)=27;
+end.
+
+program P_03; // Выбираем оценки, исправляем точку, считаем среднее
+{$APPTYPE CONSOLE}
+uses SysUtils, Crt32, Windows, Classes;
+var m: TStringList; s: string;
+    i, n: Integer;
+    fil_inp: Text;
+    sum: real;
+begin
+  SetConsoleCP(1251);
+  SetConsoleOutputCP(1251);
+
+  AssignFile(fil_inp, 'Input.txt'); Reset(fil_inp);
+  m := TStringList.Create();
+  while not Eof(fil_inp) do
+  begin
+    Readln(fil_inp, s);
+    m.Add(s);
+  end;
+  CloseFile(fil_inp);
+
+  for i:=0 to m.Count-1 do
+  begin
+    n := Pos(' ', m[i]);
+    m[i] := Copy(m[i], n+1, Length(m[i]) - n );
+  end;
+
+  sum:=0.0;
+  for i:=0 to m.Count-1 do
+  begin
+    s:=m[i];
+    n:=Pos('.', s);
+    if n > 0
+      then s[n]:=',';
+    Writeln(StrToFloat(s):0:1);
+    sum:=sum+StrToFloat(s);
+  end;
+
+  Writeln(FormatFloat('0.00',sum/m.count));
+
+  repeat until ord(ReadKey)=27;
+end.
+
+program P_04; // сортируем по оценкам
+{$APPTYPE CONSOLE}
+uses SysUtils, Crt32, Windows, Classes;
+var m: TStringList; s1, s2: string;
+    i, n: Integer;
+    fil_inp: Text;
+    sum: real;
+begin
+  SetConsoleCP(1251);
+  SetConsoleOutputCP(1251);
+
+  AssignFile(fil_inp, 'Input.txt'); Reset(fil_inp);
+  m := TStringList.Create();
+  while not Eof(fil_inp) do
+  begin
+    Readln(fil_inp, s1);
+    m.Add(s1);
+  end;
+  CloseFile(fil_inp);
+
+  for i:=0 to m.Count-1 do
+  begin
+    n := Pos(' ', m[i]);
+    s1 := Copy(m[i], 1, n-1 );
+    s2 := Copy(m[i], n+1, Length(m[i]) - n );
+    n:=Pos('.',s2); if n>0 then s2[n]:=',';
+    m[i] := s2+chr(9)+s1;
+  end;
+
+  m.Sort;
+
+  for i:=m.Count-1 downto 0 do
+    Writeln(m[i]);
+
+  repeat until ord(ReadKey)=27;
+end.
+
+
++++++++++++++++++++++++++++++++++4
+программы с лекции № 4
+
+program Project1;
+{$APPTYPE CONSOLE}
+uses SysUtils, Crt32, Utils, Classes;
+var m: TStringList; i: integer;
+begin
+  start();
+  m := TStringList.Create();
+  m.LoadFromFile('Input.txt');
+
+  for i:=0 to m.Count-1 do
+    Writeln(m[i]);
+
+  Writeln(fact(5));
+  
+  m.Free;
+  pause();
+end.
+
+модуль
+unit Utils;
+
+interface
+  procedure pause(); overload;
+  procedure pause(c: char); overload;
+  procedure pause(s: string); overload;
+  procedure start();
+  function fact(x: byte): LongWord;
+
+implementation
+
+uses Windows, SysUtils, Crt32, Classes;
+
+function fact(x: byte): LongWord;
+begin
+  if x=1
+    then result:=1
+  else
+    result:=fact(x-1)*x;
+end;
+
+procedure start();
+begin
+  SetConsoleCP(1251);
+  SetConsoleOutputCP(1251);
+  TextColor(14);
+  TextBackground(1);
+  ClrScr();
+end;
+
+procedure pause(); overload;
+begin
+  repeat until Ord(ReadKey()) = 27;
+end;
+
+procedure pause(c: char); overload;
+begin
+  repeat until ReadKey() = c;
+end;
+
+procedure pause(s: string); overload;
+var c: char;
+begin
+  c := chr(27);
+  s:=UpperCase(s);
+  if s = 'ESCAPE' then c := chr(27);
+  if s = 'SPACE' then c := chr(32);
+  if s = 'TAB' then c := chr(9);
+  if s = 'BACKSPACE' then c := chr(8);
+  if s = 'ENTER' then c := chr(13);
+  repeat until ReadKey() = c;
+end;
+
+end.
+
+++++++++++++++++++++++++++++++++5
+программы с лекции № 5
+0) с сайта забрать рейтинг
+1) распарсить файл
+   название 12%
+2) оси координат
+3) масштабировать значения
+4) построить диаграмму
+
+первая программа просто читает из файла данные:
+program p_01;
+{$APPTYPE CONSOLE}
+uses SysUtils, Classes, Utils;
+
+Type
+  TLang = record
+    name: string[20];
+    rating: Real;
+end;
+function parse(s: string): Real;
+begin
+  Delete(s, Length(s), 1);
+  if Pos('.', s) > 0
+    then s[Pos('.', s)] := ',';
+  Result := StrToFloat(s);
+end;
+
+var lst: TStringList;
+    i, count: Integer;
+    //z: TLang; arr: array[1..20] of TLang;
+    arr2: array of TLang;
+begin
+  start();
+
+  lst := TStringList.Create();
+  lst.LoadFromFile('tiobe.txt');
+  count := 0;
+  for i:=0 to lst.Count-1 do
+    if (i+1) mod 6 = 0 then
+    begin
+      inc(count);
+      SetLength(arr2, count);
+      arr2[count-1].name := lst[i-2];
+      arr2[count-1].rating := parse(lst[i-1]);
+    end;
+  for i:=0 to count-1 do
+    Writeln(arr2[i].rating:5:3, chr(9), arr2[i].name);
+
+  pause('Escape');
+end.
+
+++++++++++++++++++++++++++++++++6
+программы с лекции № 6
+
+вторая программа p_02 читает данные и строит диаграмму
+весь проект p_02.dpr с библиотеками и входным файлом можно взять с гугл-диска из папки p_02
+ссылку смотри вначале этого файла
+там же я положил такую же программу p_02_ABC.pas только выполненную в PascalABC.NET
+логика работы и структура программы такая же (отличаются некоторые методы)
+но в ней добавил сохранение построенной диаграммы в виде графического файла на диск
+
+
+program p_02;
+{$APPTYPE GUI}
+uses SysUtils, wingraph, wincrt, Classes;
+
+Type
+  TLang = record
+    name: string[20];
+    rating: Real;
+end;
+
+function parse(s: string): Real;
+begin
+  Delete(s, Length(s), 1);
+  if Pos('.', s) > 0
+    then s[Pos('.', s)] := ',';
+  Result := StrToFloat(s);
+end;
+
+const ots = 50;
+var lst: TStringList;
+    i, count, msX, msY, pole, n: Integer;
+    gd,gm: smallint;
+    arr2: array of TLang;
+begin
+  // читаем информацию из файла в список строк
+  lst := TStringList.Create();
+  lst.LoadFromFile('tiobe.txt');
+  // читаем информацию из файла в список строк
+
+  // выбираем нужные нам поля и заносим их в массив
+  count := 0;
+  for i:=0 to lst.Count-1 do
+    if (i+1) mod 6 = 0 then
+    begin
+      inc(count);
+      SetLength(arr2, count);
+      arr2[count-1].name := lst[i-2];
+      arr2[count-1].rating := parse(lst[i-1]);
+    end;
+  // выбираем нужные нам поля и заносим их в массив
+
+  // открываем графическое окно и заливаем
+  gd:=Detect; InitGraph(gd,gm,'');
+  SetBkColor( GetRGBColor(50,50,255) );
+  ClearViewPort();
+  // открываем графическое окно и заливаем
+
+  // вычисляем масштаб
+  //n := count; // выводим все значения
+  n := 5; // выводим только n лучших значений
+  msX := (GetMaxX-2*ots) div n;
+  msY := (GetMaxY-2*ots) div Round(arr2[0].rating);
+  // вычисляем масштаб
+
+  // рисуем диаграмму
+  SetFillStyle(1,GetRGBColor(50,200,100)); // стиль и цвет заливки
+  SetColor(GetRGBColor(255,255,255)); // цвет линий
+  pole := Round(msX*0.2); // ширина поля у столбика диаграммы
+  for i:=0 to n-1 do
+  begin
+    // выводим столбик с коорд. лев.вер. и прав.нин. угл.
+    Bar(ots+i*msX+pole, GetMaxY-ots-Round(arr2[i].rating*msY),
+        ots+(i+1)*msX-pole, GetMaxY-ots);
+    // выводим подпись
+    OutTextXY(ots+i*msX+pole,
+              GetMaxY-ots-Round(arr2[i].rating*msY)-TextHeight(arr2[i].name),
+              arr2[i].name);
+  end;
+  // рисуем диаграмму
+
+  // рисуем оси координат
+  SetColor(GetRGBColor(250,250,50)); SetLineStyle(1,0,2);
+  Line(ots,GetMaxY-ots,GetMaxX-ots,GetMaxY-ots);
+  Line(ots,ots,ots,GetMaxY-ots);
+  // рисуем оси координат
+
+  ReadKey; // пауза
+end.
+
+
+ещё один дополнительные пример про построение диаграммы:
+
+program P_Graf_diagr_type;
+{$APPTYPE GUI}
+uses Windows, wingraph, SysUtils, WinCrt, Math, Classes, Graphics;
+
+procedure set_b(r,g,b: word);
+begin SetBkColor(RGB(r,g,b)); end;
+
+procedure set_t(r,g,b: word);
+begin SetColor(RGB(r,g,b)); end;
+
+procedure pause_g();
+begin repeat until KeyPressed; CloseGraph; end;
+
+procedure start_g();
+var gd, gm: smallint;
+begin
+  gd:=Detect; InitGraph(gd,gm,'');
+  set_t(255,125,0); set_b(25,25,155);
+  ClearViewPort();
+end;
+
+procedure print_koord(ot: integer; msg: string);
+begin
+  Line(ot,GetMaxY - ot,GetMaxX - ot,GetMaxY - ot);
+  Line(ot,ot,ot,GetMaxY-ot); set_t(255,255,0);
+  OutTextXY((GetMaxX - ot - TextWidth(msg)), GetMaxY - ot, msg);
+end;
+
+function data(s: string): Integer;
+var n: Integer;
+begin
+  n:=Pos(chr(9),s);
+  Result := StrToInt(Copy(s,n+1,Length(s)-n));
+end;
+
+function rnd_RGB(): LongWord;
+begin
+  Result := RGB(Random(2)*100+150,Random(2)*100+150,Random(2)*100+150);
+end;
+
+const ot = 50; og = 25;
+type myt = record
+  name: string[20];
+  data: Integer;
+end;
+
+var my: real;
+    i, dx, dy, max: Integer;
+    lst: TStringList;
+    arr: array of myt;
+begin
+  start_g(); SetLineStyle(1,0,1);
+  print_koord(ot, 'мес¤ц');
+  ///////////////////////////////////////////
+  lst := TStringList.Create;
+  lst.LoadFromFile('diagramma.txt');
+
+  SetLength(arr,lst.Count);
+  max:=0;
+  for i:=0 to lst.Count-1 do
+  begin
+    arr[i].data:=data(lst[i]);
+    if arr[i].data>max then max:=arr[i].data;
+  end;
+  my := (GetMaxY-2*ot)/max;
+
+  Randomize;
+  set_t(255,255,255); SetLineStyle(1,0,2);
+  dx:=(GetMaxX-2*ot) div lst.Count;
+  for i:=0 to lst.Count-1 do
+  begin
+    SetFillStyle(1,rnd_RGB);
+    dy:=Round(arr[i].data*my);
+    RoundRect(ot+i*dx+og,GetMaxY-ot-dy,ot+(i+1)*dx-og,GetMaxY-ot,15);
+  end;
+  ///////////////////////////////////////////
+  pause_g();
+end.
+
+
+пример программы на PascalABC.NET с сохранением рисунка в файл graph.bmp на диск
+
+program p_02_ABC;
+uses GraphABC;
+
+Type
+  TLang = record
+    name: string[20];
+    rating: Real;
+end;
+
+function parse(ss: string): Real;
+var s: string;
+begin
+  s:=ss;
+  Delete(s, Length(s), 1);
+  //if Pos('.', s) > 0
+    //then s[Pos('.', s)] := ',';
+  Result := StrToFloat(s);
+end;
+
+const ots = 60;
+var txt: text; lst: array of string;
+    lst_count, count, msX, msY, pole, n: Integer;
+    s: string;
+    arr2: array of TLang;
+    
+begin
+  // читаем информацию из файла в список строк
+  AssignFile(txt, 'tiobe.txt'); Reset(txt);
+  while not eof(txt) do
+  begin
+    readln(txt, s); inc(lst_count);
+    SetLength(lst, lst_count);
+    lst[lst_count-1] := s;
+  end;
+  Close(txt);
+  // читаем информацию из файла в список строк
+
+  // выбираем нужные нам поля и заносим их в массив
+  count := 0;
+  for var i:=0 to lst.Count-1 do
+    if (i+1) mod 6 = 0 then
+    begin
+      inc(count);
+      SetLength(arr2, count);
+      arr2[count-1].name := lst[i-2];
+      arr2[count-1].rating := parse(lst[i-1]);
+    end;
+  // выбираем нужные нам поля и заносим их в массив
+
+  // открываем графическое окно и заливаем
+  SetWindowSize( 800, 600 );
+  ClearWindow( rgb(50,50,255) );
+  // открываем графическое окно и заливаем
+
+  // вычисляем масштаб
+  //n := count; // выводим все значения
+  n := 9; // выводим только n лучших значений
+  msX := (WindowWidth-2*ots) div n;
+  msY := (WindowHeight-2*ots) div Round(arr2[0].rating);
+  // вычисляем масштаб
+
+  // рисуем диаграмму  
+  SetFontColor( rgb(255,255,255) ); // цвет шрифта
+  pole := Round(msX*0.2); // ширина поля у столбика диаграммы
+  for var i:=0 to n-1 do
+  begin
+    SetBrushColor( RGB(50,200,100) ); // стиль и цвет заливки  
+    // выводим столбик с коорд. лев.вер. и прав.нин. угл.
+    FillRectangle(ots+i*msX+pole, WindowHeight-ots-Round(arr2[i].rating*msY),
+        ots+(i+1)*msX-pole, WindowHeight-ots);
+    SetBrushColor( RGB(50,50,255) ); // стиль и цвет заливки
+    // выводим подпись
+    TextOut(ots+i*msX+pole,
+              WindowHeight-ots-Round(arr2[i].rating*msY)-TextHeight(arr2[i].name),
+              arr2[i].name);
+  end;
+  // рисуем диаграмму
+
+  // рисуем оси координат
+  SetPenColor( RGB(250,250,50)); Pen.Width := 2;
+  Line(ots,WindowHeight-ots,WindowWidth-ots,WindowHeight-ots);
+  Line(ots,ots,ots,WindowHeight-ots);
+  // рисуем оси координат
+  
+  SaveWindow('graph.bmp'); // сохраняем диаграмму в графический файл  
+end.
+
+
+
+++++++++++++++++++++++++++++++++7
+программы с лекции № 7
+- PascalABC.NET
+- построение синусоиды с масштабированием и сохранением в графический файл:
+
+uses GraphABC; // чтобы сделать exe-шник нажми Ctrl+F9
+const
+  name='Незабудкин'; // автор
+  step=100; // шаг вывода значений
+  ots=20; // отступ от края
+var x,y,sy,maxX,mtY: integer;
+    fon: color;
+    mtX,interval: real;
+begin
+  
+  fon:=RGB(0,0,100);  // назначим цвет фона
+  ClearWindow(fon);   // зальём фон
+
+  sy:=trunc(WindowHeight/2);  // середина экрана по высоте    
+  maxX:=WindowWidth-2*ots; // правая граница графика 
+  interval:=3*Pi; // от 0 до 3*Pi
+  mtX:=interval/maxX; // масштаб по горизонтали
+  mtY:=sy-2*ots; // масштаб по вертикали
+  
+  SetPenColor(RGB(5,222,5)); // установим цвет оси  
+  Line(20,sy,WindowWidth-20,trunc(WindowHeight/2)); // ось Х
+    
+  SetPenWidth(3); SetPenColor(RGB(255,255,5)); // установим цвет графика
+  
+  // нарисуем линии графика
+  MoveTo(ots,sy);
+  for x:=0 to maxX do 
+  begin
+    y:=trunc(mtY*sin(x*mtX));
+    LineTo(ots+x,sy-y);
+  end;  
+  
+  // сделаем подписи на графике
+  SetFontColor(RGB(255,255,255)); SetFontSize(6); SetBrushColor(fon);  
+  for x:=0 to maxX do // изменяется от нижней до верхней границы интервала
+    if x mod step = 0 then  // на каждой step-ной точке выводим значение
+      TextOut(ots-5+x,sy+2,IntToStr(trunc(x*mtX*180/Pi)));
+
+  SetFontSize(16); SetFontColor(RGB(255,66,66));
+  TextOut(WindowWidth-TextWidth(name)-ots,
+          WindowHeight-TextHeight(name)-ots,name); // автор работы
+
+  SaveWindow(name+'.bmp'); // сохраним график в файл
+
+end.
+
+ещё пример:
+- построение графика сложной функции
+- с использованием массива структур для хранения (X,Y)
+- оси координат по центру экрана
+- диапазон симметричный
+- с масштабированием и по X и по Y
+- с сохранением в графический файл:
+
+uses GraphABC; // чтобы сделать exe-шник нажми Ctrl+F9
+
+const
+  name='Незабудкин'; // автор
+  step=10;  // шаг вывода значений
+  ots=20;   // отступ от края
+  dx=0.5;   // шаг графика
+  
+Type
+  Txy = record
+  x: real;
+  y: real;
+end;
+
+function func(x: real): real;
+begin
+  result := power(x/6, 5)+cos(x)-2;
+end;
+
+function arrT(L,R: real): array of Txy;
+var i: integer; x,y: real;
+    arr: array of Txy;
+begin
+  x:=L; i:=0;
+  repeat
+    y:=func(x); inc(i); 
+    SetLength(arr,i);    
+    arr[i-1].x:=x;
+    arr[i-1].y:=y;
+    x:=x+dx;
+  until x>R;
+  result:=arr;
+end;
+
+var sx,sy,i: integer;
+    x,y,mtX,mtY,int_L, int_R,min_Y,max_Y,mm_Y: real;
+    arr: array of Txy;
+    
+begin
+  int_L:=-3*Pi; int_R:=+3*Pi; // левая и правая границы  
+  // сформируем массив значений  
+  arr:=arrT(int_L,int_R);
+  // найдем минимум и максимум
+  min_Y:=arr[0].y; max_Y:=arr[0].y;
+  for i:=1 to arr.Length-1 do
+  begin
+    if y>max_Y then max_Y:=y;
+    if y<min_Y then min_Y:=y;
+  end;
+  // подберем масштаб графика
+  if abs(max_Y)>abs(min_Y) 
+    then mm_Y:=abs(max_Y) 
+    else mm_Y:=abs(min_Y);
+  mtX:=(int_R-int_L)/(WindowWidth-2*ots); // масштаб по горизонтали
+  mtY:=(mm_Y)/((WindowHeight-2*ots)/2); // масштаб по вертикали
+
+  sy:=trunc(WindowHeight/2);  // середина экрана по высоте
+  sx:=trunc(WindowWidth/2);   // середина экрана по ширине
+
+  ClearWindow(RGB(0,0,100));   // зальём фон  
+  SetPenColor(RGB(5,222,5)); // установим цвет осей
+  Line(ots,sy,WindowWidth-ots,sy);  // ось Х
+  Line(sx,ots,sx,WindowHeight-ots); // ось Y
+    
+  SetPenWidth(3); SetPenColor(RGB(255,255,5)); // установим цвет графика
+  SetFontColor(RGB(255,255,255)); SetFontSize(6);
+  SetBrushColor(RGB(0,0,100));
+  
+  // нарисуем линии графика
+  i:=0; 
+  MoveTo(sx+trunc(arr[i].x/mtX),sy-trunc(arr[i].y/mtY));
+  for i:=1 to arr.Length-1 do // проблемы дискретизации
+  begin
+    //LineTo(sx+trunc(arr[i].x/mtX),sy-trunc(arr[i].y/mtY));
+    PutPixel(sx+trunc(arr[i].x/mtX),sy-trunc(arr[i].y/mtY),RGB(255,255,5));  
+    if i mod step = 0 then  // на каждой step-ной точке выводим значение
+      TextOut(sx+trunc(arr[i].x/mtX),sy+2,IntToStr(trunc(arr[i].x*180/Pi)));
+  end;
+  
+  SetFontSize(16); SetFontColor(RGB(255,66,66));
+  TextOut(WindowWidth-TextWidth(name)-ots,
+          WindowHeight-TextHeight(name)-ots,name); // автор работы
+
+  SaveWindow(name+'.bmp'); // сохраним график в файл
+
+end.
+
+
+
+++++++++++++++++++++++++++++++++8
+программы с лекции № 8
+- PascalABC.NET
+
+- 1 - построение графика сложной функции
+uses GraphABC; // чтобы сделать exe-шник нажми Ctrl+F9
+
+const
+  step=10;  // шаг вывода значений
+  ots=20;   // отступ от края
+  dx=0.2;   // шаг графика
+  
+Type
+  Txy = record
+    x: real;
+    y: real;
+end;
+
+function func(x: real): real;
+begin
+  result := power(x/6, 5)+cos(x)-2;
+end;
+
+function arrT(L,R: real): array of Txy;
+var i: integer; x,y: real;
+    arr: array of Txy;
+begin
+  x:=L; i:=0;
+  repeat
+    y:=func(x); inc(i); 
+    SetLength(arr,i);    
+    arr[i-1].x:=x;
+    arr[i-1].y:=y;
+    x:=x+dx;
+  until x>R;
+  result:=arr;
+end;
+
+var sx,sy,i: integer;
+    x,y,mtX,mtY,int_L, int_R,min_Y,max_Y,mm_Y: real;
+    arr: array of Txy;
+    
+begin
+  int_L:=-3*Pi; int_R:=+3*Pi; // левая и правая границы  
+  arr:=arrT(int_L,int_R); // сформируем массив значений
+  
+  // найдем минимум и максимум
+  min_Y:=arr[0].y; max_Y:=arr[0].y;
+  for i:=1 to arr.Length-1 do
+  begin
+    if y>max_Y then max_Y:=y;
+    if y<min_Y then min_Y:=y;
+  end;
+  
+  if abs(max_Y)>abs(min_Y) // подберем масштаб графика
+    then mm_Y:=abs(max_Y) 
+    else mm_Y:=abs(min_Y);
+  mtX:=(int_R-int_L)/(WindowWidth-2*ots); // масштаб по горизонтали
+  mtY:=(mm_Y)/((WindowHeight-2*ots)/2); // масштаб по вертикали
+
+  sy:=trunc(WindowHeight/2);  // середина экрана по высоте
+  sx:=trunc(WindowWidth/2);   // середина экрана по ширине
+
+  ClearWindow(RGB(10,50,222));   // зальём фон  
+  SetPenColor(RGB(0,255,0)); // установим цвет осей
+  Line(ots,sy,WindowWidth-ots,sy);  // ось Х
+  Line(sx,ots,sx,WindowHeight-ots); // ось Y
+    
+  SetPenWidth(3); SetPenColor(RGB(255,255,0)); // цвет графика
+  i:=0; // нарисуем линии графика
+  MoveTo(sx+trunc(arr[i].x/mtX),sy-trunc(arr[i].y/mtY));
+  for i:=1 to arr.Length-1 do // проблемы дискретизации
+    LineTo(sx+trunc(arr[i].x/mtX),sy-trunc(arr[i].y/mtY));
+{
+  SetPenWidth(1); SetPenColor(RGB(255,0,0));
+  x:=6.036;
+  Line(sx+trunc(x/mtX),sy-5,sx+trunc(x/mtX),sy+5);
+  x:=3.083;
+  Line(sx+trunc(x/mtX),sy-5,sx+trunc(x/mtX),sy+5);  
+}
+end.
+
+
+- 2 - поиск точки пересечения с нулем
+uses Crt; // чтобы сделать exe-шник нажми Ctrl+F9
+  // найти пересечение с 0 в диапазоне от 0 до 3*Pi
+function func(x: real): real;
+begin
+  result := power(x/6, 5)+cos(x)-2;
+end;
+
+const
+  dx=0.0001;   // погрешность
+var xL,xR,yL,yR,x,y: real;    
+begin
+  xL:=0*Pi; xR:=3*Pi; // левая и правая границы
+  yL:=func(xL); yR:=func(xR);
+  x:=(xL+xR)/2; y:=func(x);
+  repeat    
+    if sign(yL)<>sign(y)
+      then xR:=x
+      else xL:=x;
+    yL:=func(xL); yR:=func(xR);
+    x:=(xL+xR)/2; y:=func(x);    
+  until ((xR-xL)<=dx);
+  writeln('x=',x{/Pi*180}:0:3,chr(9),'y=',y:0:3);
+end.
+
+- 3 - поиск точки экстремума функции
+uses Crt; // чтобы сделать exe-шник нажми Ctrl+F9
+  // найти экстремум функции в диапазоне от 0 до 3*Pi
+function func(x: real): real;
+begin
+  result := power(x/6, 5)+cos(x)-2;
+end;
+
+const
+  dx=0.0001;   // погрешность
+var xL,xR,yL,yR,x,y: real;    
+begin
+  xL:=0*Pi; xR:=3*Pi; // левая и правая границы
+  yL:=func(xL); yR:=func(xR);
+  x:=(xL+xR)/2; y:=func(x);
+  repeat    
+    if yL<yR
+      then xR:=x
+      else xL:=x;
+    yL:=func(xL); yR:=func(xR);
+    x:=(xL+xR)/2; y:=func(x);    
+  until ((xR-xL)<=dx);
+  writeln('x=',x{/Pi*180}:0:3,chr(9),'y=',y:0:3);
+end.
+
+++++++++++++++++++++++++++++++++9
+программы с лекции № 9
+Проблемы поиска и сортировки
+  - измерение времени
+  - измерение сложности
+
+program P_Vrem; // Delphi 7
+{$APPTYPE CONSOLE}
+uses
+  SysUtils,
+  Classes,
+  Windows;
+
+var time: Int64;
+begin
+  time:=GetTickCount; // Windows
+  // тут сортировка
+  time:=(GetTickCount-time);
+  Writeln(time:5,' msek');
+  readln;
+end.
+
+program P_List; // Delphi 7
+{$APPTYPE CONSOLE}
+uses
+  SysUtils,
+  Classes,
+  Windows;
+const count = 100;
+var lst: TStringList;
+    i: Integer;
+begin
+  lst:=TStringList.Create;
+  Randomize;
+  for i:=1 to count do
+    lst.Add(IntToStr(Random(100)));
+  lst.SaveToFile('rnd.txt');
+
+  readln;
+end.  
+
+
+program P_List_Sort; // Delphi 7
+{$APPTYPE CONSOLE}
+uses
+  SysUtils,
+  Classes,
+  Windows;
+const count = 100;
+var lst: TStringList;
+    i: Integer;
+begin
+  lst:=TStringList.Create;
+  lst.LoadFromFile('rnd.txt');
+  for i:=0 to lst.Count-1 do
+    if Length(lst[i])<2
+      then lst[i]:=' '+lst[i];
+
+  lst.Sort;
+
+  for i:=0 to lst.Count-1 do
+    Writeln(lst[i]);
+  lst.SaveToFile('rnd+.txt');
+
+  readln;
+end.
+
+
+program P_Sort_Buble; // Delphi 7
+{$APPTYPE CONSOLE}
+uses SysUtils; // пузырьковая сортировка - обменом
+
+procedure swap(var a: Integer; var b: integer);
+var tmp: Integer;
+begin
+  tmp:=a; a:=b; b:=tmp;
+end;
+
+var arr: array of Integer;
+    i, j, count: Integer; f: Text;
+begin
+  AssignFile(f, 'rnd.txt'); Reset(f);
+  count:=0;
+  while not Eof(f) do
+  begin
+    Inc(count);
+    SetLength(arr, count);
+    Readln(f, arr[count-1]);
+  end;
+  CloseFile(f);
+  
+  for i:=count-1 downto 2 do
+  for j:=0 to i-1 do
+    if arr[j]>arr[j+1]
+      then swap(arr[j], arr[j+1]);
+
+  for i:=0 to Count-1 do
+    Writeln(arr[i]);
+
+  readln;
+end.
+
+
+program P_Sort_; // Delphi 7
+{$APPTYPE CONSOLE}
+uses SysUtils; // сортировка выбором
+
+procedure swap(var a: Integer; var b: integer);
+var tmp: Integer;
+begin
+  tmp:=a; a:=b; b:=tmp;
+end;
+
+var arr: array of Integer;
+    i, j, count, imax: Integer; f: Text;
+begin
+  AssignFile(f, 'rnd.txt'); Reset(f);
+  count:=0;
+  while not Eof(f) do
+  begin
+    Inc(count);
+    SetLength(arr, count);
+    Readln(f, arr[count-1]);
+  end;
+  CloseFile(f);
+  
+  for i:=count-1 downto 1 do
+  begin
+  imax:=0;
+  for j:=0 to i do
+    if arr[j]>arr[imax]
+      then imax:=j;
+  swap(arr[imax], arr[i]);
+  end;
+
+  for i:=0 to Count-1 do
+    Writeln(arr[i]);
+
+  readln;
+end.
+
+
+program P_Sort_Insert; // Delphi 7
+{$APPTYPE CONSOLE}
+uses SysUtils; // сортировка вставкой
+
+procedure swap(var a: Integer; var b: integer);
+var tmp: Integer;
+begin
+  tmp:=a; a:=b; b:=tmp;
+end;
+
+var arr: array of Integer;
+    i, j, count, tmp: Integer; f: Text;
+begin
+  AssignFile(f, 'rnd.txt'); Reset(f);
+  count:=0;
+  while not Eof(f) do
+  begin
+    Inc(count);
+    SetLength(arr, count);
+    Readln(f, arr[count-1]);
+  end;
+  CloseFile(f);
+
+  for i:=2 to count-1 do
+  begin
+    tmp:=arr[i];
+    for j:=i downto 1 do
+      if tmp<arr[j-1]
+        then arr[j]:=arr[j-1]
+        else Break;
+    arr[j]:=tmp;
+  end;
+
+  for i:=0 to Count-1 do
+    Writeln(arr[i]);
+
+  readln;
+end.
+
+  
+++++++++++++++++++++++++++++++++10
+программы с лекции № 10
+Алгоритмы сортировки
+	1) встроенная сортировка
+	2) сортировка обменом
+	3) сортировка выбором
+	4) сортировка вставкой  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+***** Python
+для установки новых модулей - pip install paccadge
+=====
+'cp1251'
+'cp866'
+
+f = open('input.txt')
+sum = 0
+lines = f.readlines()
+for line in lines:
+    print(line,end=''),
+    sum += int(line)
+print()
+print(sum/len(lines))
+f.close()
+
+f = open('input.txt')
+sum = 0
+count = 0
+line = f.readline()
+while line:
+    print(line,end=''),
+    sum += int(line)
+    count += 1
+    line = f.readline()
+print()
+print(sum/count)
+f.close()
+=====
+txt = open("input.txt", "r")
+lines = txt.readlines()
+txt.close()
+sum = 0
+for line in lines:
+	sum += int(line)
+	
+print(sum,end="")
+=====
+txt = open("input.txt", "r")
+lines = txt.readlines()
+txt.close()
+
+txt = open("output.txt", "w")
+
+pos = 0
+while pos < len(lines):
+	if pos % 2 == 0:
+		a = int(lines[pos])
+		txt.write(str(a))
+	pos += 1
+
+txt.close()
+=====
+import random
+
+txt = open("f_output.txt", "w")
+
+count = 10
+pos = 0
+while pos < count:
+	line = str(random.randint(0, 9)) + '\n'
+	txt.write(line)
+	pos += 1
+
+txt.close()
+=====
+import random
+
+count = 5
+pos = 0
+lines = []
+while pos < count:
+	dig = random.randint(1, 100)
+	line = str(dig) + '\n'
+	lines.append(line)
+	pos += 1
+	
+txt = open("f_output.txt", "w")
+txt.writelines(lines)
+txt.close()
+=====
+
+=====
+
+import requests
+
+url = "https://tv.yandex.ru/50/channels/592"
+txt = requests.get(url).text
+
+findTime = "<span class=\"tv-event__time-text\">"
+findName = "<div class=\"tv-event__title-inner\">"
+lentm = len(findTime);
+lennm = len(findName);
+lines = []
+pos = 0
+
+while txt.find(findTime,pos)>-1:
+	pos = txt.find(findTime,pos) + lentm
+	linet = txt[pos:txt.find("</span>",pos)]
+	pos = txt.find(findName,pos) + lennm
+	linen = txt[pos:txt.find("</div>",pos)]	
+	lines.append(linet + '\t' + linen + '\n')
+
+file = open("url_output.txt", "w")
+file.writelines(lines)
+file.close()
+

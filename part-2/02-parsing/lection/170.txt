@@ -1,0 +1,2275 @@
+﻿2017   ПРОГРАММНАЯ ИНЖЕНЕРИЯ   ПИб-3курс
+ЛЕК=12шт Л/Р=8шт СРС=97ч
+
+1) тут рейтинг группы/оценки -   goo.gl/lNnbFt
+2) гугл-папка с примерами реализаций -   goo.gl/hHvGtQ
+3) тут файл HELPME, это подсказки во время ЛабРаб -   goo.gl/f2RuDo
+4) ИТ-Хакатон -   goo.gl/F1B74u     критерии оценивания - https://yadi.sk/d/EyVoof9L3HXuXm
+5) презентации лекций:
+	лекция про ИИ -   goo.gl/4vd6Dv
+	лекция про Кодирование -    goo.gl/iHMdpL
+	
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Тема 2 - обязательная (ЛабРаб сдавать - собеседование), нужно знать: 
+ - класс, объект, наследование, инкапсуляция, 
+ - поля, свойства, методы, private, protected, public
+От оценки по этой теме зависит итоговая оценка за ЭКЗАМЕН...
+Читать и вспоминать в учебнике по ООП !!!
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+	
+ЛЕКЦИИ ПИб-3
+язык C# - основная тема ООП
+- ссылка на учебник:  https://pcoding.ru/pdf/oop.pdf
+- ссылка на презентацию с основными понятиями ООП:  http://clck.ru/9uu6E
+- setup C#2008:  https://yadi.sk/d/7RP1NrKwrSMrw
+
+требования:
+  - посещать лекции, так как без них не понять что и как делать
+* до лабораторки:
+  - дома тренироваться самому по примерам с лекции
+* на лабораторке:
+  1 пара - показываете то, что сами можете, повторяя мои примеры с лекций
+  2 пара - делаете свой проект (если первую пару успешно преодолели)
+    проект постепенно будет накапливать те технологии, что мы изучаем
+
+итоговая оценка за дисциплину:
+ 3 - если в течение семестра смогли сдавать примеры с лекций на 1 паре
+ 4 - если смогли сделать свой проект
+ 5 - если смогли сделать так, чтобы я допустил к выступлению на IT-хакатоне в конце мая
+ 2 - во всех остальных случаях
+Экзамен в форме собеседования (только для тех, кого не удовлетворила оценка выше)
+
+возможные темы проектов:
+- парсер сайтов (погоды, телепрограммы, курсов валют, интернет-магазинов)
+  с рассылкой на почтовые адреса или вконтакте
+- пакетное скачивание файлов (с сайта академии расписание заочки) по расписанию
+- экспертная система самообучающаяся в ходе диалога с пользователем
+- программа, которая может залить текст в картинку и обратно декодировать
+- программа, которая берет данные из XML-файла и формирует HTML-файл
+- программа по обработке QR-кода
+- игра с динамическими компонентами
+- и т.д.
+--------------------------------------------------------------------------------
+ПАПКА examples
+---программы:
+ Poslov.rar
+https://yadi.sk/d/1cWrnCH43GD2bZ
+ EksSist.rar
+https://yadi.sk/d/-dS0n_Dv3Fc9c3 
+ MemoryCSharp.rar
+https://yadi.sk/d/bGRZtNwg3EehSp
+ anti_shake.rar
+https://yadi.sk/d/lEFjOS7H3Eehdm
+ anti_shake_with_dll.rar - это совместно с подключаемыми заголовочными файлами
+https://yadi.sk/d/NWDas1Qm3Ehjj2
+ Memory.rar это Python
+https://yadi.sk/d/ViUTOM3J3Eehir
+ Balls.rar это Python
+https://yadi.sk/d/UZIWiVpb3EehqB
+
+---библиотеки:
+1)	SmallBasicLibrary.dll - https://yadi.sk/d/qHBkwFyw3EefzS
+ требования к этой библиотеке изложены тут: https://www.microsoft.com/ru-ru/download/details.aspx?id=46392
+ самое главное .Net Framework 4.5 (если установлено ниже, то не работает)
+ скачать инсталлятор .Net Framework 4.5 можно от издателя тут: https://www.microsoft.com/ru-RU/download/details.aspx?id=30653
+ НО... в VS 2008 не поддерживается .NET версии старше, чем 3.5
+2)	MessagingToolkit.QRCode.dll - https://yadi.sk/d/T-aBKoW23H7Lio
+ для создания программ по обработке QR-кода
+ 
+--------------------------------------------------------------------------------
+!!! некоторые возможные контрольные задания по созданию методов в dll:
+- индекс массы тела - смотри в сети (вводим рост и вес, возвращает диагноз)
+- конвертер: градусы-фаренгейты, мили-километры, быйты-кбайты-Мбайты-Гбайты
+- проверить на Счастливый билет (шестизначное число)
+- проверить на Палиндром
+- исправление раскладки клавиатуры (что тут написано: xnj nen yfgbcfyj)
+
+
+ 
+ЛАБОРАТОРНЫЕ ЗАНЯТИЯ
+
+лаб 1 Техническое задание
+Разработать динамическую библиотеку с классом Conv, который содержит два статических метода DecToBin (из десятичного в двоичное) и BinToDec (из двоичного в десятичное). Каждый метод реализован в виде функции с одним входным строковым аргументом и возвращает ответ в виде строки. Если входная строка не является целым числом, то возвращается - "error input". Допустимый диапазон десятичных чисел [0..1024].
+Основная программа сделана в виде приложения Windows Worms: одно текстовое поле и две кнопки (перевести в двоичное, перевести в десятичное). Исходное значение берется из текстового поля и ответ возвращается в текстовое поле по образцу:
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = Conv.DecToBin(textBox1.Text);
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = Conv.BinToDec(textBox1.Text);
+        }
+смотрите пример реализации: https://yadi.sk/d/PP9TMYJs3EnpD8
+		тут 3 варианта реализации:
+			- программа на CSharp + dll с классом Conv
+			- программа на CSharp + стиль Metro + dll с классом Conv
+			- программа на Delphi + dll с классом Conv (будет работать после регистрации в системе утилитой RegAsm.exe - читайте ReadMe из папки)
+
+лаб 2 Техническое задание
+-1- дома изучить Главу №6 учебника ООП - ссылка в начале этого файла
+-2- повторить пример из главы, добиться его работоспособности и принести показать на занятии
+-3- на основе примера самостоятельно, по аналогии создать иерархию классов:
+___базовый класс:
+	Живое
+		(атрибуты: возраст/скрытый)
+		(методы: установить возраст, получить возраст)
+___производный (от Живое) класс - 1 уровень:
+	Человек
+		(атрибуты: Фамилия, Имя, Отчество, Пол)
+		(методы: получить инициалы, получить пол в виде слова,
+		получить возраст - зависит от пола)
+___производный (от Человек) класс - 2 уровень:
+	Работник
+		(атрибуты: отдел, телефон, стаж, зарплата)
+		(методы: установить ставку зарплаты,
+		получить зарплату - зависит от стажа)
+___производный (от Живое) класс 1 уровень:
+	Ork_B
+		(методы: получить возраст - возвращает как двоичное число,
+		установить возраст - принимает как десятичное число)
+		производный (от Живое) класс 1 уровень:
+	Ork_D
+		(методы: установить возраст - принимает как двоичное число,
+		получить возраст - возвращает как десятичное)
+Внимание: 
+- у Ork-ов используйте разработанную вами ранее на ЛабРаб_№1 библиотеку по переводу числа Десятичное<-->Двоичное
+
+лаб 3 Техническое задание (до 11 марта, так как я в отпуске, вопросы через вконтакт)
+	Работа с динамическими компонентами - используем классы для создания объектов во время работы приложения
+		сравниваем два языка: Delphi vs C#
+- изучите видео Создание компонентов во время выполнения приложения: http://itvop.vov.ru/delphi/video.htm
+- скачайте там же пример к этому видео и исследуйте его (это на Delphi)
+- на сайте войдите на вкладку Программная инженерия / Динамические компоненты (http://itvop.vov.ru/pdf/dinamic.pdf)
+- сравните реализацию динамических компонентов в Delphi и C#
+- отдохните и поиграйте в игру, использующую динамические компоненты: MemoryCSharp https://yadi.sk/d/bGRZtNwg3EehSp
+- реализуйте на C# игру в составление поговорок из слов с проверкой правильности по образцу (скачать: https://yadi.sk/d/1cWrnCH43GD2bZ) 
+
+лаб 4 Техническое задание
+	Разработать Windows Forms Application для парсинга ТВ-программы на текущий день для нескольких каналов (5-6 по своему желанию, например, СТС, Рен-ТВ, Россия 1 и т.п.)
+
+лаб 5 Техническое задание
+	Разработать Windows Forms Application - "Экспертную систему" с динамической библиотекой (dll), реализующей поиск на бинарном дереве решений. Глубина бинарного дерева от 3-х до 5-ти. Тема: по согласованию с преподавателем.
+	Вот тут смотрите примеры готовых реализаций: EksSist.rar https://yadi.sk/d/-dS0n_Dv3Fc9c3 
+	Исходники для dll-библиотеки смотрите тут (170.txt) ниже (несколько разных вариантов).
+	Сдавать нужно программу со СВОЕЙ собственной библиотекой.
+
+лаб 6 Техническое задание
+	Программа по пакетной обработке файлов с QR-кодами и с некоторой обработкой в dll-библиотеке.
+	0) сделать программу как в учебнике в Главе 12. // заранее до занятия
+	1) повторить программу с лекции (см. Лек_09). // заранее до занятия
+	2) Задание на dll буду уточнять в индивидуальном порядке прямо на занятии.
+	
+лаб 7 Техническое задание
+	Искусственный интеллект и проблемы распознавания образов
+	Разработать программу (на основе моей с лекции - упрощенный вариант, смотри далее), которая будет распознавать три символа.
+	Символы выбираете сами любые, но не те, что у меня в матрицах весов.
+	За основу брать программу с Лекции № 10. Сам код ниже в этом файле.
+	Особенности задания слушайте на лекции. 
+	Образцы реализаций с матрицами весов смотрите в гугл-папке (папка decode) скачать тут: https://goo.gl/hHvGtQ
+	Там упрощенная программа (.NET 3.5) и полная программа (.NET 4.5.2)
+		_ упрощенное приложение сделаете сами: на форме две button и один pictureBox
+		_ файлы с матрицами из моего примера (можно взять изменить, удалить, добавить)
+		_ сам код упрощенной программы ниже (нужно не только скопировать, но и подключить события):
+
+	
+лаб 8 Техническое задание
+	Шифрование в графике
+	Разработать программу, которая будет шифровать текст в рисунок и обратно декодировать.
+	Особенности задания слушайте на лекции.
+	Образцы реализаций и пример кода смотрите в гугл-папке (папка codeDEcode, ссылка в начале этого файла).
+	Внимательно читайте README.txt и комментарии в коде...
+	Пример кода (упрощенный, для одного символа) есть и в этом файле - см. лекцию № 11.
+		
+!!!  больше нет лабораторок  !!!
+	
+	
+СОДЕРЖАНИЕ ЛЕКЦИЙ
+_____________________________________________
+_____________________________________________
+лекция 01 Консольные приложения
+вопросы: 
+C# изменения в версиях
+консольное приложение - что, как и зачем
+Main - аргументы и без аргументов
+cmd.exe
+запустить консольную программу из приложения виндовс форм:
+
+методы
+ перегрузка
+ аргументы
+ по значению
+ по ссылке
+ необязательные
+ по умолчанию
+
+сделать класс:
+ внутри Programm / отдельно
+ и использовать его
+сделать динамическую библиотеку и использовать её (подключить ссылку)
+_____________________________________________
+_____________________________________________
+лекция 02 Методы и передача параметров
+вопросы (основные: поля, свойства, конструкторы, методы): 
+
+Main - аргументы и без аргументов
+cmd.exe
+запустить консольную программу из WFA
+Process.Start("name.exe", args);
+
+функции или методы
+аргументы методов и ключевые слова ref out
+ по значению (перевод чисел)
+ по ссылке (палиндром)
+методы
+ перегрузка
+ конструктор
+поле или свойство
+_____________________________________________
+_____________________________________________
+лекция 03 Абстрагирование и инкапсуляция
+вопросы (основные: пространство имен, модификаторы доступа, поля, конструкторы, методы): 
+
+Класс Точка
+функция -> метод
+модификаторы private public
+модификатор static
+
++ нерассмотренные вопросы 1 и 2 лекции
+   - передача параметров в программу извне
+   - запуск консольной программы другой программой
+_____________________________________________
+_____________________________________________
+лекция 04 Динамические компоненты
+вопросы / основные:
+	1. Передача аргументов
+		по значению
+		по ссылке
+	2. Стек и куча
+	3. Динамические компоненты (методичка http://itvop.vov.ru/pdf/dinamic.pdf)
+_____________________________________________
+_____________________________________________
+лекция 05 Абстрагирование и инкапсуляция
+вопросы / основные:
+	1. передача аргументов
+		по значению
+		по ссылке
+	2. динамические компоненты
+_____________________________________________
+_____________________________________________
+лекция 06 Экспертные системы
+вопросы / основные:
+	1. структура хранения дерева решений
+	2. WFA
+	3. dll
+_____________________________________________
+_____________________________________________
+лекция 07 Наследование
+вопросы / основные:
+	1. static
+	2. protected
+	3. дочерние классы
+_____________________________________________
+_____________________________________________
+лекция 08 Перегрузка методов
+вопросы / основные:
+	1. override
+	2. методы парсинга
+	3. парсинг ТВ
+_____________________________________________
+_____________________________________________
+лекция 09 Перегрузка методов
+вопросы / основные:
+	1. override
+	2. методы парсинга
+	3. парсинг ТВ
+	
+
+	
+ПРИМЕРЫ С ЛЕКЦИЙ
+====================
+Лек_01
+====================
+using System;
+//если так - using static System.Console;
+//то можно без класса - WriteLine(Pow(3));
+
+class Program
+{
+    static int Pow(int x, int y = 2)
+    {
+        int result = 1;
+        for (int i = 0; i < y; i++)
+        {
+            result *= x;
+        }
+        return result;
+    }
+
+    static void Main()	
+    //static void Main(string[] args)
+    {
+        Console.WriteLine(Pow(3));
+        Console.WriteLine(Pow(3,3));
+        Console.WriteLine(Pow(y: 4, x: 2));
+        Console.ReadKey();
+		//do { } while (ReadKey(true).KeyChar != (char)27);
+    }
+}
+
+
+    static void Main(string[] args)
+    {
+        Console.Clear();
+        int x = Convert.ToInt32(args[0]);
+        int y = Convert.ToInt32(args[1]);
+        WriteLine(Pow(x, y));
+
+        ReadKey();
+    }
+
+---
+using System;
+using System.IO;
+using static System.Console;
+
+class Program
+{
+    static int Pow(int x)
+    {
+        int result = 1, y = 2;
+        for (int i=0; i<y; i++)
+        {
+            result *= x;
+        }
+        return result;
+    }
+
+    static int Pow(int x, int y)
+    {
+        int result = 1;
+        for (int i=0; i<y; i++)
+        {
+            result *= x;
+        }
+        return result;
+    }
+    static int Pow(int x, int y = 2) // для C#6.0
+    {
+        int result = 1;
+        for (int i = 0; i < y; i++)
+            result *= x;
+        return result;
+    }
+    static double sum2(string[] w)
+    {
+        double result = 0;
+        foreach (string x in w)
+            result += Pow(Convert.ToInt32(x));
+        return result;
+    }
+    static void Pause(int w)
+    {
+        do { } while (ReadKey(true).KeyChar != (char)w);
+    }
+
+    static void Main(string[] a)
+    {
+        Clear();
+        try
+        {
+            string FileName = "01.txt"; // a[0];
+            string[] arStr = File.ReadAllLines(FileName);
+            WriteLine(sum2(arStr));
+        }
+        catch
+        {
+            WriteLine("Error");
+        }
+        Pause(27);
+    }
+}
+
+---	
+
+
+сделать класс:
+using System;
+
+namespace Pib
+{
+    class Utils
+    {
+        static public int Pow(int x)
+        {
+            int result = 1, y = 2;
+            for (int i = 0; i < y; i++)
+            {
+                result *= x;
+            }
+            return result;
+        }
+        static public int Pow(int x, int y)
+        {
+            int result = 1;
+            for (int i = 0; i < y; i++)
+            {
+                result *= x;
+            }
+            return result;
+        }
+        static double sum2(string[] w)
+        {
+            double result = 0;
+            foreach (string x in w)
+                result += Pow(Convert.ToInt32(x));
+            return result;
+        }
+        static public void Pause(int w)
+        {
+            do { } while (Console.ReadKey(true).KeyChar != (char)w);
+        }
+    }
+}
+
+и использовать его:
+using System;
+using System.IO;
+using Pib;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.Clear();
+        try
+        {
+            string FileInput = "01.txt"; // a[0];
+            string FileOutput = "02.txt"; // a[1];
+            string[] arStr = File.ReadAllLines(FileInput);            
+            for (int i = 0; i < arStr.Length; i++)
+                if ((i & 1) == 0)
+                    arStr[i] = Convert.ToString(Utils.Pow(Convert.ToInt32((arStr[i]))));
+            File.WriteAllLines(FileOutput, arStr);
+        }
+        catch
+        {
+            Console.WriteLine("Error");
+        }
+        Utils.Pause(27);
+    }    
+}
+
+сделать динамическую библиотеку и использовать её
+
+using System;
+
+namespace Pib
+{
+    public class Utls
+    {
+        static public int Pow(int x)
+        {
+            int result = 1, y = 3;
+            for (int i = 0; i < y; i++)
+            {
+                result *= x;
+            }
+            return result;
+        }
+        static public int Pow(int x, int y)
+        {
+            int result = 1;
+            for (int i = 0; i < y; i++)
+            {
+                result *= x;
+            }
+            return result;
+        }
+        static double sum2(string[] w)
+        {
+            double result = 0;
+            foreach (string x in w)
+                result += Pow(Convert.ToInt32(x));
+            return result;
+        }
+        static public void Pause(int w)
+        {
+            do { } while (Console.ReadKey(true).KeyChar != (char)w);
+        }
+        static public string[] ConvertArr(string[] w)
+        {
+            string[] result = new string[w.Length];
+            result = w;
+            for (int i = 0; i < w.Length; i++)
+                if ((i & 1) == 0)
+                    result[i] = Convert.ToString(Utls.Pow(Convert.ToInt32((w[i]))));
+            return result;
+        }
+        static public void ConvertArrRef(ref string[] w)
+        {            
+            for (int i = 0; i < w.Length; i++)
+                if ((i & 1) == 0)
+                    w[i] = Convert.ToString(Utls.Pow(Convert.ToInt32((w[i]))));
+        }
+    }
+}
+
+
+using System;
+using System.IO;
+using Pib;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.Clear();
+        try
+        {
+            string FileInput = "01.txt"; // a[0];
+            string FileOutput = "02.txt"; // a[1];
+            string[] arStr = File.ReadAllLines(FileInput);
+            //arStr = Utls.ConvertArr(arStr);
+            Utls.ConvertArrRef(ref arStr);
+            File.WriteAllLines(FileOutput, arStr);
+            Console.WriteLine("Successful");
+        }
+        catch
+        {
+            Console.WriteLine("Error");
+        }
+        Utls.Pause(27);
+    }    
+}	
+
+
+---
+
+
+запустить консольную программу из приложения виндовс форм:
+
+using System.Diagnostics;
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string par1 = textBox1.Text;
+            string par2 = textBox2.Text;
+            string args = par1 + " " + par2;
+            Process.Start("CA_2017_lek_01.exe", args);
+        }
+
+====================
+Лек_02
+====================
+моя программа с лекции с ошибкой от поспешности )))
+и в следующей строчке как правильно !!!
+
+using System;
+
+class Program
+{
+    public class mmm 
+    {
+        // поля
+        public int x;
+        private int _y;
+        // свойства
+        public int y
+        {
+            get { return _y; }
+			// set { if (y > 0) _y = y; else _y = 1; } // тут ошибка
+            set { if (value > 0) _y = value; else _y = 1; }
+        }
+        // конструкторы
+        public mmm()
+        {
+            this.x = 2;
+            _y = 6;
+        }
+        public mmm(int b)
+        {           
+            _y = b;
+        }
+        public mmm(int x, int b)
+        {
+            this.x = x;
+            _y = b;
+        }
+        // методы
+        public double power()
+        {
+            return Math.Pow(x, _y);
+        }
+    }
+
+    static double pwr(int a, int b) 
+    {
+        return Math.Pow(a, b);
+    } 
+
+    static void Main(string[] args)
+    {
+        
+        mmm e = new mmm();
+
+        mmm t = new mmm(2, 5);
+
+        mmm w = new mmm(2, 5);
+
+
+        t.y = -2;
+        //t.x = 3;
+        Console.WriteLine(t.y);
+        Console.WriteLine(t.power());
+    }
+}
+
+и сравним, наконец, со статическим полем
+using System;
+
+class Program
+{
+    public class mmm 
+    {
+        // поля
+        public int x;
+        private int _y;
+        public static int z;
+        // свойства
+        public int y
+        {
+            get { return _y; }
+            set { if (value > 0) _y = value; else _y = 1; }
+        }
+        // конструкторы
+        public mmm()
+        {
+            this.x = 2;
+            _y = 6;
+            z = 0;
+        }
+        public mmm(int b)
+        {           
+            _y = b;
+            z = 0;
+        }
+        public mmm(int x, int b, int z)
+        {
+            this.x = x;
+            _y = b;
+            // this.z = z; // так только для объектов
+            mmm.z = z;
+        }
+        // методы
+        public double power()
+        {
+            return mmm.z + Math.Pow(x, _y);
+        }
+    }
+
+    static double pwr(int a, int b) 
+    {
+        return Math.Pow(a, b);
+    } 
+
+    static void Main(string[] args)
+    {
+        
+        mmm e = new mmm();
+        mmm t = new mmm(2, 5, 3);
+        mmm w = new mmm(2, 5, 0);   // эту оставим - будет 3
+                                    // если закомментим = 5
+        t.y = -2;
+        //t.x = 3;
+        Console.WriteLine(t.y);
+        Console.WriteLine(t.power());
+    }
+}
+
+
+====================
+Лек_03
+====================
+
+демонстрация out ref
+using System;
+
+class Program
+{
+    static void gen_o(int count, out int[] arr)
+    {
+        int[] a = new int[count];
+        Random r = new Random((int)DateTime.Now.Ticks);
+        for (int i = 0; i < a.Length; i++)
+            a[i] = r.Next(0, count);
+        arr = a;
+    }
+    static void gen_r(int count, ref int[] a)
+    {
+        Array.Resize(ref a, count);
+        Random r = new Random((int)DateTime.Now.Ticks);        
+        for (int i = 0; i < a.Length; i++)
+            a[i] = r.Next(0, count);
+    }
+
+    static void Main()
+    {
+        int count = 9; int[] arr;
+
+        gen_o(count, out arr);
+        foreach (int x in arr)
+            Console.Write("{0,5}", x);
+        Console.WriteLine();
+        count /= 2;
+        gen_r(count, ref arr);
+        foreach (int x in arr)
+            Console.Write("{0,5}", x);
+        Console.WriteLine();
+
+        Console.ReadKey(true);
+    }
+}
+---
+поля и свойства | конструкторы и методы
+using System;
+
+class Program
+{
+    class Anum
+    {
+        // поля
+        public int x;
+        private int _y;
+        
+        // свойства        
+        public int y
+        {
+            get { return _y; }
+            set { if (value > 0) _y = value; else _y = 1; }
+        }
+        // конструкторы
+        public Anum()
+        {
+            this.x = 2;
+            this._y = 3;
+        }
+        public Anum(int x, int y)
+        {
+            this.x = x;
+            this.y = y;            
+        }
+        // методы
+        public double power()
+        {
+            return Math.Pow(x, y);
+        }
+        public void print()
+        {
+            Console.WriteLine(power());
+        }
+    }
+
+    static void Main()
+    {
+        Anum a = new Anum();
+        a.print();
+        Anum b = new Anum(2, -4);
+        b.print();
+        b.y = -5;
+        b.print();
+
+        Console.ReadKey(true);
+    }
+} 
+
+
+ 
+ 
+--- читаем пишем текстовый файл
+using System;
+using System.IO;
+using System.Text;
+
+class Program
+{
+    static bool provline(out string line)
+    {
+        line = "";
+        return true;
+    }
+    static void Main(string[] args)
+    {
+        string FileInp = "input.txt";
+        string FileOut = "output.txt";
+        StreamReader sr = new StreamReader(FileInp, Encoding.UTF32);
+        StreamWriter sw = new StreamWriter(FileOut, false, Encoding.UTF8);
+        //string txt = sr.ReadToEnd();
+        //Console.WriteLine(txt);
+        //sw.Write(txt);
+
+        sw.WriteLine(DateTime.Now.ToLongTimeString());
+        
+        string line;
+        while ( (line = sr.ReadLine()) != null)
+        {
+            sw.WriteLine(line);
+        }
+        
+        sr.Close();
+        sw.Close();
+    }
+} 
+---
+using System;
+using System.IO;
+using System.Text;
+
+class Program
+{
+    static bool provline(out string line)
+    {
+        line = "";
+        return true;
+    }
+    static void Main(string[] args)
+    {
+        string FileInp = "input.txt";
+        string FileOut = "output.txt";
+        
+        StreamReader sr = new StreamReader(FileInp);
+        Encoding code = sr.CurrentEncoding;
+        StreamWriter sw = new StreamWriter(FileOut, false, code);
+        
+        string line = sr.ReadLine();
+        while (line != null)
+        {
+            sw.WriteLine(line);
+            line = sr.ReadLine();
+        }
+        
+		//string line;
+        //do
+        //{
+        //    line = sr.ReadLine();
+        //    sw.WriteLine(line);
+        //} while (line != null);
+        
+		sr.Close();
+        sw.Close();
+    }
+} 
+ 
+ 
+---
+		// дата время
+        DateTime thisDay = DateTime.Now;
+        string line;
+        //line = thisDay.Date.ToString("d");
+        line = thisDay.ToLongDateString();        
+        line = thisDay.ToLongTimeString();
+        //line = thisDay.Hour.ToString() + ":" + thisDay.Minute.ToString();
+--- 
+ 
+ 
+
+ 
+ 
+      работа с интернет-страницами и сетевыми документами
+	    пакетное скачивание файлов по расписанию
+	    парсер сайта с сохранением в txt
+
+// необходимо подключить
+using System.IO;
+using System.Net;
+using System.Text;
+
+			// качаем один файл в заданную папку
+            string PathApp = Directory.GetCurrentDirectory();            
+            WebClient wc = new WebClient();
+            string FileLoad = "http://itvop.vov.ru/pdf/dinamic.pdf";
+            int PosLast = FileLoad.LastIndexOf('/');
+            string PathSave = "SaveFromWeb";
+            string FileName = FileLoad.Substring(PosLast, FileLoad.Length - PosLast);
+            string FileSave = PathApp + "/" + PathSave + "/" + FileName;
+            wc.DownloadFile(FileLoad, FileSave);
+            
+            // или так 
+            WebClient webClient = new WebClient();
+            webClient.DownloadFile("http://pgsha.ru:8008/shedules/%C8%F1%E1-2012.xls", "12.xls");
+			
+			
+			// сохраняем содержимое html-странички как файл в заданную папку		
+            string PathApp = Directory.GetCurrentDirectory();            
+            WebClient wc = new WebClient();
+            string FileLoad = "http://itvop.vov.ru/170.txt";
+            string Source = wc.DownloadString(FileLoad);
+            string PathSave = "SaveFromWeb";
+            int PosLast = FileLoad.LastIndexOf('/');
+            string FileName = FileLoad.Substring(PosLast, FileLoad.Length - PosLast);            
+            string FileSave = PathApp + "/" + PathSave + "/" + FileName;
+            File.WriteAllText(FileSave, Source);
+			
+		// или так - через Запрос-Ответ:
+        string http = "http://itvop.vov.ru/170.txt";
+        HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(http);
+        WebResponse webResponse = httpWebRequest.GetResponse();
+        Stream responseStream = webResponse.GetResponseStream();
+        Encoding Code = Encoding.GetEncoding("UTF-8");
+        StreamReader sr = new StreamReader(responseStream, Code);
+        string result = sr.ReadToEnd(); // html-страница в виде одной строки
+        sr.Close();
+        File.WriteAllText("OutPut.txt", result, Encoding.GetEncoding(1251));
+
+		// с рассылкой по адресам:
+        string smtpServer = "smtp.yandex.ru";
+        string from = "";
+        string password = "";
+        string mailto = "";
+        string caption = "";
+        string message = result;
+        string attachFile = NameFile;
+
+        MailMessage mail = new MailMessage();
+        mail.From = new MailAddress(from);        
+        mail.To.Add(new MailAddress(mailto));
+        mail.Subject = caption;
+        mail.Body = message;        
+        mail.Attachments.Add(new Attachment(attachFile));
+        SmtpClient client = new SmtpClient();
+        client.Host = smtpServer;
+        client.Port = 587;
+        client.EnableSsl = true;
+        client.Credentials = new NetworkCredential(from.Split('@')[0], password);
+        client.DeliveryMethod = SmtpDeliveryMethod.Network;
+        client.Send(mail);
+        mail.Dispose();
+
+
+-------
+	пример организации парсера новостей с yandex.ru (без использования регулярных выражений)
+	сначала вспомогательные функции:		
+        static string GetSubString(string src, string Begin, string End, ref int pos) 
+        {	// получить подстроку
+            pos = src.IndexOf(Begin, pos) + Begin.Length;
+            int count = src.IndexOf(End, pos) - pos;
+            return src.Substring(pos, count) + "\r\n";
+        }
+        static void ConvFormat(ref string src)
+        {	// сменить кодировку строки
+            Encoding srcFormat = Encoding.GetEncoding("utf-8");
+            byte[] Bytes = srcFormat.GetBytes(src);
+            src = Encoding.GetEncoding(1251).GetString(Bytes);             
+        }
+	далее основная работа в main-функции:
+            string PathApp = Directory.GetCurrentDirectory();
+            WebClient wc = new WebClient();
+
+            string FileLoad = "https://yandex.ru/";            
+            string Source = wc.DownloadString(FileLoad);
+            string PathSave = "SaveFromWeb", FileName = "news.txt";
+            string FileSave = PathApp + "/" + PathSave + "/" + FileName;
+
+            string[] titles = new string[] { "Новости мира", "Новости Перми" };
+            string nl = "\r\n";
+            ConvFormat(ref titles[0]); ConvFormat(ref titles[1]);
+
+            int pos = 0; string result = "", a, b;
+            for (int j = 0; j < 2; j++)
+            {
+                result += titles[j] + nl + nl;
+
+                pos = Source.IndexOf("ol class=\"list b-news-list\"", pos);
+                pos = Source.IndexOf("li class=\"list__item\"", pos);
+                for (int i = 0; i < 5; i++)
+                {
+                    a = GetSubString(Source, "<a href=\"", "\" class=", ref pos);
+                    b = GetSubString(Source, "aria-label=\"", "\">", ref pos);
+                    result += b + a + "\r\n";
+                }
+            }
+
+            File.WriteAllText(FileSave, result, Encoding.GetEncoding(1251));	
+
+	продолжение - пример организации парсера новостей с yandex.ru с использованием регулярных выражений
+	только основная функция с "грязным кодом":
+            string[] labels = new string[] { "USD ЦБ", "EUR ЦБ", "OIL нефть"};
+            WebClient wc = new WebClient();            
+            string Source = wc.DownloadString("https://yandex.ru/");
+                // <span class="inline-stocks__value_inner">58,91</span>            
+            string otbor = "<span class=\"inline-stocks__value_inner\">([0-9]+,+[0-9]+)";
+            //string result = Regex.Match(Source, otbor).Groups[1].Value;
+            string result = "";
+            DateTime thisDay = DateTime.Today;
+            string td = thisDay.Date.ToString("d");
+            result += td + "\r\n\r\n";
+
+            StreamWriter file = new StreamWriter("news.txt", true, Encoding.GetEncoding(1251));
+            int index = 0;
+            foreach (Match m in Regex.Matches(Source, otbor))
+            {
+                //result += m.Groups[1].Value + "\t" + ConvFormat(labels[index]) + "\r\n";
+                file.WriteLine(m.Groups[1].Value + "\t" + ConvFormat(labels[index]));
+                index++;
+            }
+            file.Close();
+            //File.WriteAllText("news.txt", result, Encoding.GetEncoding(1251));
+-----
+пример для Windows Forms Application - парсинг ТВ-программы
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Net;
+using System.IO;
+
+namespace WFA_parse
+{
+    public partial class Form1 : Form
+    {
+        struct ch_info
+        {
+            public string name, num;
+        }
+        string[] chls;
+        List<ch_info> chs = new List<ch_info>();
+        ch_info ch_temp;
+        string result = "";
+
+        public Form1()
+        {
+            InitializeComponent();
+            comboBox1.Items.Clear();
+            chls = File.ReadAllLines("input.txt",Encoding.Default);
+            
+            foreach (string val in chls)
+            {
+                string[] temp = val.Split('\t');
+                comboBox1.Items.Add(temp[1]);
+                ch_temp.name = temp[1];
+                ch_temp.num = temp[0];
+                chs.Add(ch_temp);
+            }
+            comboBox1.Text = "сделайте выбор";
+        }
+
+        static string GetSubString(string src, string Begin, string End, ref int pos)
+        {	// получить подстроку
+            pos = src.IndexOf(Begin, pos) + Begin.Length;
+            int count = src.IndexOf(End, pos) - pos;
+            return src.Substring(pos, count);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            WebClient wc = new WebClient();
+            wc.Encoding = Encoding.GetEncoding("UTF-8");
+
+            string chanel = comboBox1.Text;
+            foreach (var z in chs)
+                if (z.name == chanel)
+                {
+                    string a = "", b = "";
+                    string t1 = "<time class=\"channel-schedule__time\">";
+                    string t2 = "<span class=\"channel-schedule__text\">";
+                    int pos = 0;
+                    this.Text = z.name;
+                    string Source = wc.DownloadString("https://tv.yandex.ru/50/channels/" + z.num);
+                    
+                    result = z.name + "\r\n";
+                    DateTime thisDay = DateTime.Today;
+                    result += thisDay.Date.ToString("d") + "\r\n\r\n";
+                    do
+                    {
+                        pos = Source.IndexOf(t1, pos);
+                        a = GetSubString(Source, t1, "</time>", ref pos);
+                        b = GetSubString(Source, t2, "</span>", ref pos);
+                        b = b.Replace("&quot;", "\"");
+
+                        result += a + "\t" + b + "\r\n";
+                    } while (Source.IndexOf(t1, pos)>0);
+                    
+                    textBox1.Text = result;                    
+                    this.Text += " - готово";
+                    break;
+                }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //File.WriteAllText("output.txt", result, Encoding.GetEncoding("UTF-8"));
+            File.WriteAllText("output.txt", textBox1.Text, Encoding.GetEncoding(1251));
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+-----
+пример команды new и добавление обработчиков событий
+    public partial class Form1 : Form
+    {
+        List<Label> lbls = new List<Label>();
+        int count;
+
+        public Form1()
+        {
+            InitializeComponent();
+            count = 0;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {            
+            if ((sender as Button).Text == "+")
+            {
+                lbls.Add(new Label());
+                count = lbls.Count - 1;
+                lbls[count].Left = button1.Left + button1.Width + 10;
+                lbls[count].Top = 10 + count*25;
+
+                lbls[count].Text = "МЕТКА " + Convert.ToString(count);
+                lbls[count].MouseEnter += new EventHandler(lbl_MouseEnter);
+                lbls[count].MouseLeave += new EventHandler(lbl_MouseLeave);
+                Controls.Add(lbls[count]);
+            }
+            else 
+            {
+                if (count > -1) 
+                {
+                    Controls.RemoveAt(1 + lbls.Count);
+                    lbls.RemoveAt(lbls.Count - 1);
+                    count = lbls.Count - 1;
+                }                
+            }            
+        }
+
+        private void lbl_MouseEnter(object sender, EventArgs e)
+        {
+            (sender as Label).ForeColor = Color.Yellow;
+            //(sender as Label).Text = "* * *";
+        }
+
+        private void lbl_MouseLeave(object sender, EventArgs e)
+        {
+            (sender as Label).ForeColor = Color.Black;
+        }
+    }
+		
+-----
+заготовки под змейку
+
+using System;
+using System.Collections.Generic;
+
+namespace Zmeika
+{
+    public class css01
+    {        
+        int x;
+        int y;
+        public static char smb;
+        public css01(int _x, int _y, char _smb)
+        {
+            x = _x;
+            y = _y;
+            smb = _smb;
+        }
+        public void sdvig(int xs, int ys)
+        {
+            del();
+            x += xs;
+            y += ys;
+            put();
+        }
+        public void put()
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.SetCursorPosition(x, y);
+            Console.Write(smb);
+        }
+        public void del()
+        {
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.SetCursorPosition(x, y);
+            Console.Write(smb);
+        }
+    }
+    public class utls
+    {
+        public static void print(List<css01> z)
+        {
+            foreach (css01 pnt in z)
+                pnt.put();
+        }
+        public static void printdel(List<css01> z)
+        {
+            foreach (css01 pnt in z)
+                pnt.del();
+        }
+        public static void pause(int key)
+        {
+            do { } while (Console.ReadKey(true).KeyChar != (char)27);
+        }
+    }
+}
+
+
+        css01 a = new css01(3, 3, '*');
+        ConsoleKeyInfo key;
+        a.put();
+
+        do
+        {
+            key = Console.ReadKey(true);
+            if (key.Key == ConsoleKey.LeftArrow)
+                a.sdvig(-1, 0);
+            if (key.Key == ConsoleKey.RightArrow)
+                a.sdvig(1, 0);
+            if (key.KeyChar == '1')
+                css01.smb = '8';
+        } while (key.KeyChar != (char)27);
+		
+		
+        List<css01> lst = new List<css01>();
+        for (int i = 10; i < 25; i++)
+            lst.Add(new css01(i, 15, '*'));
+
+        css01.smb = '0';
+        utls.print(lst);
+        utls.pause(27);
+        utls.printdel(lst);
+        utls.pause(27);
+-----
+
+
+скачиваем и подключаем библиотеку SmallBasic и запускаем черепашку
+SmallBasicLibrary.dll
+https://yadi.sk/d/qHBkwFyw3EefzS
+
+using Microsoft.SmallBasic.Library;
+using System.Threading;
+
+            Turtle.Speed = 8;
+            int ang = 0;
+            int n = 9;
+            for (int j = 0; j < n; j++)
+            { 
+                for (int i = 0; i < n; i++)
+                {
+                    Turtle.Move(80);
+                    ang += (360 / n);
+                    Turtle.Angle = ang;
+                    Thread.Sleep(250);
+                }
+                ang += (360 / n);
+                Turtle.Angle = ang;
+                Thread.Sleep(1000);
+            }
+
+
+			
+            Console.Clear();
+            
+            Turtle.Speed = 5;
+            int ang = 0, n = 6, pov = 15;
+            Turtle.X = GraphicsWindow.Width / 2;
+            Turtle.Y = GraphicsWindow.Height / 2;            
+            Turtle.Angle = ang;
+            Turtle.Move(0);
+
+            ConsoleKeyInfo k = new ConsoleKeyInfo();
+            while (true)
+            {
+                Turtle.Move(n);
+                if (Console.KeyAvailable == true)
+                {
+                    k = Console.ReadKey(true);
+                    if (k.Key == ConsoleKey.LeftArrow)
+                        Turtle.Angle -= pov;
+                    if (k.Key == ConsoleKey.RightArrow)
+                        Turtle.Angle += pov;
+                    if (k.Key == ConsoleKey.UpArrow)
+                        n += 2;
+                    if (k.Key == ConsoleKey.DownArrow)
+                        if (n>0) n -= 2;
+                    if (k.Key == ConsoleKey.Escape)
+                        break;
+                }
+                Thread.Sleep(250);
+            }
+            //do
+            //{
+            //    k = Console.ReadKey(true);
+            //    if (k.Key == ConsoleKey.LeftArrow)
+            //    {
+            //        ang = ang - pov;
+            //        Turtle.Angle = ang;                    
+            //    }
+            //    if (k.Key == ConsoleKey.RightArrow)
+            //    {
+            //        ang = ang + pov;
+            //        Turtle.Angle = ang;                    
+            //    }
+            //    Turtle.Move(n);
+            //    Thread.Sleep(250);
+            //} while (k.KeyChar != (char)27);
+            //do {
+            //    k = Console.ReadKey(true);
+            //    if (k.Key == ConsoleKey.UpArrow)
+            //        Turtle.Move(n);
+            //    if (k.Key == ConsoleKey.DownArrow)
+            //        Turtle.Move(-n);
+            //    if (k.Key == ConsoleKey.LeftArrow)
+            //    {
+            //        ang = ang - 90;
+            //        Turtle.Angle = ang;
+            //        Turtle.Move(n);
+            //    }
+            //    if (k.Key == ConsoleKey.RightArrow)
+            //    {
+            //        ang = ang + 90;
+            //        Turtle.Angle = ang;
+            //        Turtle.Move(n);
+            //    }
+
+            //    //Console.WriteLine(Convert.ToString(k.Key));
+            //} while (k.KeyChar != (char)27);
+
+			
+			
+			
+			
+====================
+Лек_06	Экспертные системы на бинарном дереве
+====================
+готовая реализация с работающей dll для бинарного дерева - EksSist.rar:
+https://yadi.sk/d/-dS0n_Dv3Fc9c3 
+
+txt
+живое
+	плавает
+		млекопитающее
+			_кит
+			_акула
+		большой
+			косолапый
+				_медведь
+				_слон
+			_крыса
+	сделал человек
+		на колесах
+			_автомобиль
+			работает, если включить в розетку
+				_телевизор
+				_кубик Рубика
+		_камень
+dll
+namespace es_bin
+{
+    public class Esb
+    {
+        char tb = (char)9; // символ отступа
+        string[] db; // для хранения всей БД
+        int pos_db; // позиция в базе
+        int ur; // уровень погружения
+        public bool finish;
+
+        public Esb(string FileName)
+        {
+            db = File.ReadAllLines(FileName, Encoding.Default);            
+        }
+
+        public string get_start()
+        {
+            pos_db = 0; ur = 0;
+            return db[0]; 
+        }
+
+        public string find_pos()
+        {
+            string temp;
+            int count; // отступы в текущей строке
+            do
+            {
+                pos_db++;
+                temp = db[pos_db];
+                count = temp.LastIndexOf(tb);
+            } while (count != ur); // пока не найдем нужный уровень
+            return db[pos_db];
+        }
+
+        public string print_vopr(int otv)
+        {
+            string vopr = "";
+            pos_db++;
+            if (otv == 0)
+                vopr = db[pos_db];
+            else
+                vopr = find_pos();
+            vopr = vopr.Substring(++ur);
+            finish = false;
+            if (vopr[0] == '_')
+            {
+                vopr = vopr.Substring(1);
+                finish = true;
+            }            
+            return vopr;
+        }
+    }
+}
+wfa
+using es_bin;
+
+namespace EksSist_02
+{
+    public partial class Form1 : Form
+    {        
+        Esb d;
+        int otv;
+
+        public void init()
+        {
+            label1.Text = d.get_start();
+            gb.Enabled = true;
+            del_rb();
+            button1.Enabled = false;
+        }
+
+        public void del_rb()
+        { // погасить все radiobutton
+            rb_YES.Checked = false;
+            rb_NO.Checked = false;            
+        }
+
+        public Form1()
+        {
+            InitializeComponent();
+            string FileName = Directory.GetCurrentDirectory() + "/" + "db.txt";
+            d = new Esb(FileName);            
+        }
+
+        private void rb_YES_CheckedChanged(object sender, EventArgs e)
+        {
+            otv = Int32.Parse((sender as RadioButton).Tag.ToString());
+            button1.Enabled = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            label1.Text = d.print_vopr(otv);
+            gb.Enabled = !d.finish;            
+            del_rb();
+            button1.Enabled = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            init();
+        }
+    }
+}
+немного измененный вариант dll c вызовом конструктора из конструктора
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.IO;
+
+namespace es_bin_3_5
+{
+    public class Esb
+    {
+        private string[] db;
+        private char stab;
+        private char send;
+        private int ur;
+        private int pos;
+        public bool finish;
+
+        public Esb(string FileName): this(FileName, (char)9, '_')
+        { }
+
+        public Esb(string FileName, char _stab, char _send)
+        {
+            db = File.ReadAllLines(FileName, Encoding.Default);
+            stab = _stab;
+            send = _send;
+        }
+
+        public string get_start()
+        {
+            finish = false;
+            ur = 0; pos = 0;
+            return db[0];
+        }
+        private string ur_str(string s)
+        {
+            return s.Substring(ur);
+        }
+        private void find_pos()
+        {
+            string t_str;
+            int level;
+            do {
+                t_str = db[++pos];
+                level = t_str.LastIndexOf(stab);
+            } while (level != ur-1);            
+        }
+        public string get_next(int otv) 
+        {
+            ur++; pos++;
+            if (otv > 0) find_pos();
+            string result = ur_str(db[pos]);
+            if (result[0] == send)
+            {
+                finish = true;
+                result = result.Substring(1);
+            }
+            return result;
+        }
+    }
+}
+
+
+
+
+====================
+Лек_07
+====================
+сначала вариант исполнения библиотеки как дополнение к лекции 06
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+
+namespace EksSis_PI
+{
+    public class ESPI
+    {
+        public char stab;
+        public char send;
+        public string[] db;
+        public ESPI(string fn, char _stab, char _send)
+        {
+            stab = _stab; send = _send;
+            db = File.ReadAllLines(fn); 
+        }
+        public string get_start() 
+        {
+            return db[0];
+        }
+
+    }
+}
+и программа к ней:
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using EksSis_PI;
+using System.IO;
+
+namespace EksSistBin
+{
+    public partial class Form1 : Form
+    {
+        ESPI z;
+        int otv;
+
+        public Form1()
+        {
+            InitializeComponent();
+            string FileName = Directory.GetCurrentDirectory() + '/' + "db.txt";
+            z = new ESPI(FileName, '\t', '_');
+        }
+
+        void del_rb()
+        {
+            radioButton1.Checked = false;
+            radioButton2.Checked = false;
+        }
+        void update_lab()
+        {
+            /*
+            if (z.finish)
+            {
+                label1.Text += " - это ответ !";
+                button1.Enabled = false;
+            }
+            else
+                label1.Text += " ???";
+             */
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //label1.Text = z.get_next(otv);
+            update_lab();
+            del_rb();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            label1.Text = z.get_start();
+            label1.Text += " ???";
+            button1.Enabled = true;           
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            otv = Convert.ToInt32((sender as RadioButton).Tag.ToString());
+        }
+    }
+}
+
+
+
+
+
+
+
+пример работы со статическим полем:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CA_static
+{
+    class Prim 
+    {
+        static public int count = 0;        
+        public int num;
+        public int ord;
+        public Prim(int x) 
+        { 
+            num = x;
+            ord = count++;
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<Prim> obs = new List<Prim>();
+            int x;
+            do 
+            {
+                x = Convert.ToInt32(Console.ReadLine());
+                if (x%2 != 0)
+                    obs.Add(new Prim(x));
+            } while (x!=0);
+
+            foreach (var z in obs)
+                Console.WriteLine(z.ord + " - " + z.num);
+            
+            Console.WriteLine(Prim.count);
+            Console.ReadKey(true);
+        }
+    }
+}
+
+ещё пример работы со статическим полем:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CountObj
+{
+    class Obj
+    {
+        public static int count = 0;
+        public int num_obj;
+        public int x;
+        public Obj(int _x)
+        {            
+            x = _x;
+            num_obj = ++count;
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+//            List<Obj> obs = new List<Obj>();
+            Obj[] obs = new Obj[120];
+            int x = 0;
+            do {
+                x = Convert.ToInt32(Console.ReadLine());
+                if ((x % 2 == 0) && (x>0))
+                {
+                    //Obj z = new Obj(x);
+                    //obs.Add(z);                    
+                    obs[Obj.count] = new Obj(x);
+                }
+            } while (x>0);
+            Console.WriteLine("- - -");
+            //foreach (var d in obs)
+                //Console.WriteLine("{0} - {1}", d.num_obj, d.x);
+            for (int i = 0; i < Obj.count; i++ )
+                Console.WriteLine("{0} - {1}", obs[i].num_obj, obs[i].x);
+            Console.WriteLine("Общее количество - " + Obj.count);
+            Console.ReadKey();
+        }
+    }
+}
+
+пример наследования и поля protected
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CA_protected
+{
+    class Base 
+    {
+        public int a;
+        protected int b;
+        private int c;
+        //
+    }
+    class Second: Base
+    {
+        public void set_b(int num) 
+        {
+            this.b = num;
+        }
+        public int get_b()
+        {
+            return this.b;
+        }
+    }
+    class Trith : Second { }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Base x = new Base();
+            x.a = 45;
+            Second y = new Second();
+            y.set_b(666);
+            Console.WriteLine(y.get_b());
+            Console.ReadKey(true);
+        }
+    }
+}
+
+
+
+====================
+Лек_08
+====================
+- перегрузка методов
+- парсинг сайтов
+	
+тут перегрузка:	
+using System;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        class Check
+        {
+            public int num;
+            private int count = 0; 
+            public bool Prov()
+            {
+                // 1 num
+                bool b = true;
+                for (int i = 2; i < num / 2; i++)
+                    if (num % i == 0)
+                    {
+                        b = false;
+                        break;
+                    }
+                return b;
+            }
+            public override string ToString()
+            {
+                count++;
+                return count.ToString() + " простое число - " + Convert.ToString(num);
+            }
+        }
+
+        static void Main(string[] args)
+        {            
+            Check z = new Check();
+            for (int i = 1; i < 100; i++)
+            {
+                z.num = i;
+                if (z.Prov())
+                    Console.WriteLine(z.ToString());
+            }
+            Console.ReadKey(true);
+        }
+    }
+}
+
+тут парсинг:
+using System;
+using System.IO;
+using System.Net;
+using System.Text;
+
+namespace ConsoleApp2
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+            int num = 265;
+
+            WebClient wc = new WebClient();
+            wc.Encoding = Encoding.GetEncoding("UTF-8");
+
+            string Source = wc.DownloadString("https://tv.yandex.ru/50/channels/" + num.ToString());
+            string Result = ""; int pos = 0; int count = 0;
+
+            string btime = "<time class=\"channel-schedule__time\">";
+            string etime = "</time>";
+
+            while (Source.IndexOf(btime, pos) > 0)
+            {
+                pos = Source.IndexOf(btime, pos) + btime.Length;
+                count = Source.IndexOf(etime, pos) - pos;
+                Result += "\t" + Source.Substring(pos, count) + "\r\n";
+            }
+
+            File.WriteAllText("tv.txt", Result, Encoding.Default);
+        }
+    }
+}
+
+ещё вариант перегрузки:
+	______________________________
+    class PrNum
+    {
+        public int num = 0;
+        public PrNum(int num)
+        {
+            this.num = num;
+        }
+        public override string ToString()
+        {
+            return "- число " + num + (testNum()? " простое": " сложное");
+        }
+        public bool testNum()
+        {
+            for (int i = 2; i <= num / 2; i++)
+                if (num % i == 0) return false;
+            return true;
+        }
+    }
+	________________________________
+
+
+====================
+Лек_09
+====================
+- пакетная обработка файлов
+- QR-коды
+
+using System;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+using MessagingToolkit.QRCode.Codec;
+using System.IO;
+
+namespace WindowsFormsApplication1
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string PathApp = Directory.GetCurrentDirectory();
+            QRCodeEncoder z = new QRCodeEncoder();
+            string[] arr = { };
+            try
+            {
+                string FileName = "input.txt";
+                arr = File.ReadAllLines(FileName);
+            }
+            catch
+            {
+                MessageBox.Show("Error");
+            }
+            foreach (var s in arr)
+            {
+                Bitmap b = z.Encode(s, Encoding.UTF8);
+                b.Save(PathApp + "/000/" + s + ".bmp");
+            }
+            MessageBox.Show("Кол-во файлов: " + "\n" + (arr.Length).ToString());            
+        }
+    }
+}
+
+
+====================
+Лек_10
+====================
+- элементы ИИ, распознавание образов
+  _ примеры (папка decode) скачать тут: https://goo.gl/hHvGtQ
+  _ упрощенная программа (.NET 3.5) и полная программа (.NET 4.5.2))
+  
+  _ упрощенное приложение сделаете сами: на форме две button и один pictureBox
+  _ файлы с матрицами из моего примера (можно взять изменить, удалить, добавить)
+  _ сам код упрощенной программы ниже (нужно не только скопировать, но и подключить события):
+  
+namespace decode
+{
+    public partial class Form1 : Form
+    {
+        string symb = "0123"; // символы с матрицами весов
+        static int kol; // количество символов
+        int[] sum; // тут считаем проценты за каждый символ
+        string[][] inp = new string[10][]; // массив массивов строк
+        Bitmap bmp1; Graphics grf1;        
+        Brush brs = new SolidBrush(Color.Black); // кисть рисования
+        int pen_w = 9; // ширина пера рисования
+        int step = 40; // ширина квадрата абстрагирования в пикселях        
+
+        public Form1()
+        {
+            InitializeComponent();
+            kol = symb.Length;
+            sum = new int[kol];
+            for (int i = 0; i < kol; i++) // читаем файлы с матрицами весов
+              inp[i] = System.IO.File.ReadAllLines(symb[i] + ".txt");
+
+            bmp1 = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            grf1 = Graphics.FromImage(bmp1);
+            grf1.Clear(Color.White);
+            pictureBox1.Image = bmp1;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            grf1.Clear(Color.White);
+            pictureBox1.Refresh();
+        }
+
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                grf1.FillRectangle(brs, e.X, e.Y, pen_w, pen_w);
+                pictureBox1.Refresh();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int r = pictureBox1.Width/step; // сколько квадратов абстрагирования
+            char[,] pic = new char[r, r]; // абстрагированная матрица
+            Color fon = bmp1.GetPixel(0, 0); // по крайнему пикселю цвет фона
+            
+            for (int dx = 0; dx < r; dx++)
+              for (int dy = 0; dy < r; dy++)
+              {  // если есть поподание 1 пикселя, то абстрагируем до квадрата
+                 pic[dx, dy] = '0';
+                 for (int x = 0; x < step; x++)
+                   for (int y = 0; y < step; y++)
+                     if (bmp1.GetPixel(dx*step+x, dy*step+y).ToArgb() != fon.ToArgb())
+                       pic[dx, dy] = '1';                    
+              }
+
+            for (int z = 0; z < kol; z++)
+            { // перебираем символы
+              sum[z] = 0; // считаем рейтинг символов
+              for (int dx = 0; dx < r; dx++)
+                for (int dy = 0; dy < r; dy++)                
+                  if (pic[dx, dy] != '0')
+                  {
+                    if (inp[z][dy][dx] - 48 > 0)
+                      sum[z] += inp[z][dy][dx] - 48;
+                  }
+                  else
+                  {
+                    if (inp[z][dy][dx] == '9')
+                      sum[z] += 9;
+                  }                
+            }
+            //  z - номер матрицы или символа в строке symb
+            // dy - номер строки в матрице
+            // dx - номер позиции в строке dy
+            int maxi = 0; // выбираем символ с максимальным рейтингом
+            for (int i = 1; i < kol; i++)            
+              if (sum[i]>sum[maxi]) maxi = i;
+            
+            MessageBox.Show("ЭТО ЦИФРА - " + symb[maxi]);
+            // упрощения: нет масштабирования и центрирования
+        }
+    }
+}
+
+
+
+====================
+Лек_11
+====================
+	Шифрование в графике.
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using System.IO;
+
+namespace codeDEcode
+{
+    public partial class Form1 : Form
+    {
+        int x, y; // координаты пикселя
+        int r, g, b; Color t; // цвет пикселя
+        string[] lst = { }; // массив под строки            
+        byte[] arr = { }; // массив под байты символов строки
+        int cod; // код символа
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private int bit(int cod, int sdv) 
+        {
+            return ((cod & (1 << sdv)) > 0) ? 1 : 0;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Bitmap img_input = new Bitmap("input.bmp");
+            pictureBox1.Image = img_input;                
+
+            int sdv; // сдвиг
+            lst = File.ReadAllLines("input.txt"); // список строк из файла
+
+            y = 0; // это номер строки, можно сделать цикл по строкам
+            {
+                string s = lst[y] + Convert.ToChar(0); // одна строка из списка строк
+                arr = Encoding.Default.GetBytes(s); // строку в байты " "=32 "1"=49 ...  
+
+                x = 0; // позиция пикселя
+                int j = 0; // это номер символа в строке
+                {
+                    cod = (int)arr[j]; // устанавливаем код символа
+                    sdv = 0; // обнуляем сдвиг
+                    for (int p = 0; p < 3; p++) // номер пикселя
+                    {
+                        t = ((Bitmap)pictureBox1.Image).GetPixel(x, y); // узнаем цвет пикселя
+
+                        r = (t.R & 254) | bit(cod, sdv++);
+                        g = (t.G & 254) | bit(cod, sdv++);
+                        if (p < 2)
+                            b = (t.B & 254) | bit(cod, sdv++);
+                        else
+                            b = t.B;
+                        ((Bitmap)pictureBox1.Image).SetPixel(x, y, Color.FromArgb(r, g, b));
+                        x++; // переходим на следующий пиксель
+                    }
+                }
+            }
+
+            pictureBox1.Refresh();
+            Bitmap img_output = new Bitmap(pictureBox1.Image);
+            img_output.Save("output.bmp");
+            MessageBox.Show("OK");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Bitmap img_decode = new Bitmap("output.bmp");
+            pictureBox1.Image = img_decode;
+
+            Array.Resize(ref lst, 0);
+            y = 0;            
+            bool b = false; // не конец файла - читать можно
+            do
+            {
+                x = 0;
+                Array.Resize(ref arr, 0);                
+                
+                {
+                    cod = 0; // сбрасываем значение кода символа
+                    int sdv = 0; // сдвиг 0..7
+                    for (int p = 0; p < 3; p++) // номер пикселя
+                    {
+                        t = ((Bitmap)pictureBox1.Image).GetPixel(x, y);
+                        cod += (t.R & 1) << sdv++;
+                        cod += (t.G & 1) << sdv++;
+                        if (p < 2)
+                            cod += (t.B & 1) << sdv++;
+                        x++;
+                    }
+                    b = true;
+                    {
+                        Array.Resize(ref arr, arr.Length + 1);
+                        arr[arr.Length - 1] = (byte)cod;
+                    }
+                }
+
+                char[] chars = Encoding.Default.GetChars(arr);
+
+                Array.Resize(ref lst, ++y); // добавим строку
+                foreach (var c in chars)
+                    lst[y - 1] += c;
+            } while (!b); // пока не конец файла
+
+            File.WriteAllLines("output.txt", lst);
+            MessageBox.Show("OK");
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+примеры для магистров
+
+            Numb z = new Numb();            
+            
+            if (Int32.TryParse(textBox1.Text, out int x))
+            {
+                z.num = x;
+                if (z.Prov())
+                    label1.Text = "простое";
+                else
+                    label1.Text = "сложное";
+            }
+            else
+                label1.Text = "сам дурак ...";
+				
+				
+
+using System;
+
+namespace Utils
+{
+    public class Numb
+    {
+        public int num;
+
+        public bool Prov()
+        {
+            bool b = true;
+            for (int x = 2; x <= num / 2; x++)
+                if (num % x == 0)
+                { b = false; break; }
+            return b;
+        }
+    }
+}
+=============================
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+using System.Net;
+
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static public string Parse(string Source, ref int pos, string stime, string etime)
+        {
+            pos = Source.IndexOf(stime, pos) + stime.Length;
+            int count = Source.IndexOf(etime, pos) - pos;
+            return Source.Substring(pos, count);
+        }
+
+        static void Main(string[] args)
+        {
+            string http = "https://tv.yandex.ru/50/channels/265";
+            WebClient wc = new WebClient();
+            wc.Encoding = Encoding.GetEncoding("UTF-8");
+            string Source = wc.DownloadString(http);
+            
+            int pos = 0;
+            string Result = "dekjhrbflerk" + "\r\n\r\n";
+            string stime = "<time class=\"channel-schedule__time\">";
+            string etime = "</time>";
+            while (Source.IndexOf(stime, pos)>0)
+            {
+                Result += "\t"+Parse(Source, ref pos, stime, etime) + "\r\n";
+                //egrfoi4ygp
+            }
+            File.WriteAllText("tv_Первый.txt", Result, Encoding.GetEncoding("UTF-8"));
+        }
+    }
+}
+
+
+
+
+ЗАГРУЗКА БЕЗ БРАУЗЕРА
+        private void button2_Click(object sender, EventArgs e)
+        {   // System.Net
+            WebClient wc = new WebClient();
+            string url = "https://pcoding.ru/pdf/MySQL_CSharp.pdf";
+            string name = "new.pdf";
+            string path = Directory.GetCurrentDirectory() + "/" + name;
+            wc.DownloadFile(url, path);
+        }
+ЗАГРУЗКА ЧЕРЕЗ БРАУЗЕРЕР
+        System.Diagnostics.Process.Start("https://pcoding.ru/pdf/MySQL_CSharp.pdf");
+
