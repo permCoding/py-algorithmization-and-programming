@@ -4,6 +4,12 @@
 
 ---  
 
+https://youtu.be/qC-eM4JBh0w
+https://youtu.be/pXRviuL6vMY
+https://youtu.be/F_mOR3TuO7I
+
+---  
+
 Написать модуль с классом:  
 Переводит рисунок в ASCII-Art  
 Функционал – что можно менять:  
