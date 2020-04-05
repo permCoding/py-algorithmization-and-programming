@@ -1,0 +1,13 @@
+Алгоритмизация и программирование - ПИб-1
+
+Прямые трансляции (Лекции по пн с 08:30):
+https://bbb.psaa.ru/b/and-jca-drk
+
+Лекция 06.04.2020:
+https://youtu.be/H8GQn0YKMPM
+
+Лабораторная работа 07.04.2020:
+https://stepik.org/lesson/329357/step/1?unit=312663
+
+Курс - материалы, примеры программ, вспомогательные файлы:
+https://github.com/permCoding/py-algorithmization-and-programming
