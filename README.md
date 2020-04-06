@@ -1,4 +1,4 @@
-# py-algorithmization-and-programming
+## py-algorithmization-and-programming
 ## Алгоритмизация и программирование
 ### на Python
 
@@ -15,6 +15,14 @@ _Семестр 2_
 
 На степике будем проводить небольшие контрольные работы по темам.  
 Вот наш курс [Алгоритмизация и программирование](https://stepik.org/64867/)  
+
+---  
+  
+Список учебных видео для начинающих в Питоне:  
+https://youtu.be/Z4JoqD-vZJY  
+https://youtu.be/CeIJqd1spDk  
+https://youtu.be/gsdyjDg4w-g  
+https://youtu.be/1tdMfGiQXd8  
 
 ---  
 
