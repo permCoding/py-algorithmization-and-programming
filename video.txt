@@ -1,0 +1,20 @@
+
+Python
+
+Первая программа
+https://youtu.be/Z4JoqD-vZJY
+
+Вторая программа
+https://youtu.be/CeIJqd1spDk
+
+Отладка программы
+https://youtu.be/7rYd1ivZNwQ
+
+Алгоритмическое мышление
+https://youtu.be/H8GQn0YKMPM
+
+Меняем значение переменных
+https://youtu.be/gsdyjDg4w-g
+
+Длинная арифметика
+https://youtu.be/1tdMfGiQXd8
