@@ -4,7 +4,10 @@
 from PIL import Image
 
 
-def get_image_resize(img, height_new):    
+def get_image_resize(img, height_new):
+    '''
+    изменить размеры рисунка
+    '''    
     width, height = img.size  # исходные размеры рисунка
     width_new = width // (height//height_new)
     img_new = img.resize((width_new, height_new), Image.ANTIALIAS)
@@ -13,7 +16,7 @@ def get_image_resize(img, height_new):
 
 name_image = 'ждун.jpeg'
 img = Image.open(name_image)
-img_new = get_image_resize(img, 100)  # привести к размеру 100 пикселей
+img_new = get_image_resize(img, 50)  # привести к размеру 50 пикселей
 
 symbols = ' -+'  # добавить больше градаций яркости
 count = len(symbols)
@@ -31,7 +34,7 @@ for y in range(height):
             pos = 1
         if color >= segment * 2:
             pos = 2
-        result += symbols[pos]
+        result += symbols[pos] * 2
     result += '\n'
 
 print(result)

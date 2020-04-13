@@ -7,7 +7,9 @@ img = Image.open("white.jpg")
 
 point = (0, 0)
 
-r, g, b = img.getpixel(point)
+color = img.getpixel(point)
+
+r, g, b = color
 
 print(r, g, b)
 
