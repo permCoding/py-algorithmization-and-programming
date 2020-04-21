@@ -11,7 +11,9 @@ def get_image_resize(img, height_new):
     return img_new
 
 
-symbols = ' -+'  # тут добавить больше градаций яркости и подобрать свои символы
+symbols = ' -+8'  # тут добавить больше градаций яркости и подобрать свои символы
+
+symbols = symbols[::-1]
 
 name_image = 'ждун.jpeg'
 img = Image.open(name_image)
@@ -35,7 +37,11 @@ for y in range(height):
 
 
 # тут добавить вывод в текстовый файл
-print(result)
+name_txt = name_image + '.txt'
+f = open(name_txt, 'w')
+f.write(result)
+f.close()
+# print(result)
         
 
 
