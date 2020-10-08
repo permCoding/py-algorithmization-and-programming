@@ -37,7 +37,7 @@ for _ in range(bomb_count):
 
 clock = pygame.time.Clock()  # объект для отсчёта времени
 time_fall = 0  # текущее время задержки падения всех бомбочек
-int_fall = 10  # интервал до следующего сдвига mlsek
+int_fall = 20  # интервал до следующего сдвига mlsek
 
 pygame.display.update()  # отрисовываем фон
 

@@ -47,7 +47,7 @@ while True:  # бесконечный цикл приложения, для об
             printing()
         if pos_x + step < win_width - h_w and key[pygame.K_RIGHT]:
             pos_x += step  # движение вправо
-            img_index = (img_index + 1) % len(images)  # 0 1 2 -> 3 => 0 1 2
+            img_index = (img_index + 1) % len(images)  # 0 1 2 3 4 -> 5 => 0 1 2 3 4
             printing()
 
     for e in pygame.event.get():
